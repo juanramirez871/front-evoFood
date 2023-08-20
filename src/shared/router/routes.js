@@ -4,7 +4,7 @@ export default [
     {
         path: '/:catchAll(.*)',
         component: () => import('../../modules/auth/pages/404.vue'),
-        meta: { name: 'Not Found' },
+        meta: { name: 'Not Found', title: "404 No Encontrado" },
     },
     //{
         // path: '/',

@@ -20,9 +20,9 @@ const layout = computed(() => {
 
 watch(route, () => {
 	if (route.meta) {
-		document.title = 'Sinergia - ' + (route.meta.title || 'Sinergia');
+		document.title = 'EvoFood - ' + (route.meta.title || 'EvoFood');
 	} else {
-		document.title = 'Sinergia';
+		document.title = 'EvoFood';
 	}
 }, {
 	immediate: true,
@@ -32,5 +32,8 @@ watch(route, () => {
 </script>
 
 <style>
+*{
+	font-family: 'Open Sans';
+}
 </style>
 
