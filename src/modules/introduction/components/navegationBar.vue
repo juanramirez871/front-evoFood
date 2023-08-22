@@ -6,9 +6,9 @@
     </a>
     <nav>
         <div class="menu-links">
-        <a href="./cursos">Inicio</a>
-        <a href="./hola">Guia-Res</a>
-        <a href="./blog">Ingresar</a>
+            <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
+            <a :class="{ 'active-link': activeLink === 'Guia-Res' }" href="#" @click="setActiveLink('Guia-Res')">Guia-Res</a>
+            <a :class="{ 'active-link': activeLink === 'Ingresar' }" href="#" @click="setActiveLink('Ingresar')">Ingresar</a>
         </div>
         <div class="menu-toggle">
             <hamburguerMenu />
@@ -20,7 +20,13 @@
 
 <script setup>
 import { ref } from 'vue';
-import hamburguerMenu from './hamburguerMenu.vue'
+import hamburguerMenu from './hamburguerMenu.vue';
+
+const activeLink = ref(null);
+
+const setActiveLink = (link) => {
+    activeLink.value = link;
+};
 
 </script>
 
@@ -34,7 +40,7 @@ box-sizing: inherit;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 1000;
     width: 100%;
     background: linear-gradient(180deg, #D7D6E9 0%, rgba(193, 190, 242, 0.21) 100%);
     color: rgb(0, 0, 0);
@@ -44,22 +50,23 @@ box-sizing: inherit;
 .header-container {
 margin-right: auto;
 margin-left: auto;
-max-width: 1200px;
+max-width: 80%;
 height: 4rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
+
 }
 .logo {
 display: flex;
 align-items: center;
 text-decoration: none;
-padding-left: 3rem;
+padding-left: 1rem;
 }
 .logo img {
 width: 10rem;
 height: auto;
-margin-right: 0.5rem;
+margin-right: 0.4rem;
 }
 .menu {
 display: flex;
@@ -89,28 +96,39 @@ transform: rotate(90deg);
     flex-direction: row;
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 100%;
+    top: 84%;
     right: 0;
     width: auto;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 8rem;
+    padding-right: 11rem;
     gap : 3.5rem
 }
 .menu-open .menu-links {
 transform: translateY(0);
 }
 .menu-links a {
-display: flex;
-padding: 1rem;
-font-family: 'dosis';
-font-size: 1.2rem;
-text-decoration: none;
-font-weight: bolder;
-color: #070530;
-transition: background-color 0.3s ease-in-out;
+    display: flex;
+    padding: 0.5rem;
+    align-self: center;
+    font-family: 'dosis';
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bolder;
+    color: #070530;
+    transition: transform 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+.menu-links a:hover {
+    border-bottom-color: #05006b;
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+.menu-links a.active-link {
+    border-bottom-color: #040233;
+    opacity: 0.8;
 }
 .menu-toggle {
     display: none;
