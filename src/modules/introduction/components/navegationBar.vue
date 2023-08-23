@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted} from 'vue';
 import hamburguerMenu from './hamburguerMenu.vue';
 
 const activeLink = ref(null);
@@ -27,7 +27,14 @@ const activeLink = ref(null);
 const setActiveLink = (link) => {
     activeLink.value = link;
 };
-
+onMounted(() => {
+    // Cambiar la opacidad y posición de la barra de navegación después de que el componente esté montado
+    setTimeout(() => {
+        const header = document.querySelector('.header');
+        header.style.opacity = '1';
+        header.style.transform = 'translateY(0)';
+    }, 100); // Agregar un pequeño retraso para asegurarse de que la transición funcione correctamente
+});
 </script>
 
 <style scoped>
@@ -42,9 +49,13 @@ box-sizing: inherit;
     right: 0;
     z-index: 1000;
     width: 100%;
-    background: linear-gradient(180deg, #D7D6E9 0%, rgba(193, 190, 242, 0.21) 100%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background: linear-gradient(180deg, #D7D6E9 0%, rgba(227, 226, 241, 0.982) 100%);
     color: rgb(0, 0, 0);
-    transition: background-color 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
 }
 .header-container {

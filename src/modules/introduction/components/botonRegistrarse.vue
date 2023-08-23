@@ -17,7 +17,9 @@
 <style scoped>
 .button {
     display: inline-flex;
-    padding: 1rem 1rem;
+    padding: 1.4rem 1.4rem;
+    font-size: 1.0rem;
+
     border: 0;
     position: relative;
     overflow: hidden;
@@ -75,5 +77,20 @@
 100% {
     transform: rotate(360deg);
 }
+}
+@media (max-width: 768px) {
+    .button {
+        display: inline-flex;
+        padding: 1.5rem 1.5rem;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10rem;
+        font-size: 1.0rem;
+        transition: all 0.02s;
+        font-weight: bolder;
+        color: rgb(0, 0, 0);
+        bottom: 1.8em; 
+    }
 }
 </style>
