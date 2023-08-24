@@ -61,6 +61,7 @@
     filter: blur(20px);
     animation: effect infinite 3s linear;
     opacity: 0.45;
+    z-index: 1;
 }
 
 .button:hover .hoverEffect div {

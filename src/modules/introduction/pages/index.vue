@@ -33,15 +33,21 @@
             </svg>
     </div>
     <div class="menusdigitales">
+        <br>
         Menús digitales atractivos
     </div>
+    <div class="carrusel">
+        <slideMenu />
+    </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br>
 </template>
 
 <script setup>
 import navegationBarVue from '../components/navegationBar.vue';
 import botonRegistrarse from '../components/botonRegistrarse.vue';
 import descripcionInicioVue from '../components/descripcionInicio.vue';
+import slideMenu from '../components/slideMenus.vue';
 </script>
 
 <style scoped>
@@ -77,23 +83,6 @@ import descripcionInicioVue from '../components/descripcionInicio.vue';
     bottom: -100px; 
     left: 0;
 }
-@media (max-width: 768px) {
-    .imagen{
-        display: flex;
-        position: relative;
-        margin-left: 0;
-    }
-    .content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        margin-top: -8%;
-    }
-    .imagen img {
-        max-width: 50%; /* Cambia este valor según tus necesidades */
-    }
-}
 .menusdigitales{
     color: #0C0A36;
     font-family: Dosis;
@@ -104,8 +93,15 @@ import descripcionInicioVue from '../components/descripcionInicio.vue';
     line-height: normal;
     justify-content: center;
     margin-top: 8%;
+    margin-bottom: 20%;
 }
-@media (max-width: 1200px) {
+.carrusel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
     .linea {
         width: 100%;
         margin-top: -1%;
@@ -123,9 +119,28 @@ import descripcionInicioVue from '../components/descripcionInicio.vue';
         line-height: normal;
         justify-content: center;
         margin-top: 8%;
+        margin-bottom: 18%;
     }
+    .carrusel {
+        margin-top: 40%;
+}
 }
 @media (max-width: 768px) {
+    .imagen{
+        display: flex;
+        position: relative;
+        margin-left: 0;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-top: -8%;
+    }
+    .imagen img {
+        max-width: 50%;
+    }
     .menusdigitales{
         color: #0e0b4f;
         font-family: Dosis;
@@ -136,6 +151,9 @@ import descripcionInicioVue from '../components/descripcionInicio.vue';
         line-height: normal;
         justify-content: center;
         margin-top: 20%;
+    }
+    .carrusel {
+        margin-top: 40%;
     }
 }
 </style>

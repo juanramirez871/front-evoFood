@@ -44,7 +44,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    animation: floating 3.8s ease-in-out infinite; /* Agregamos la animación */
+    animation: floating 3.5s ease-in-out infinite; /* Agregamos la animación */
 }
 
 .celular img {
