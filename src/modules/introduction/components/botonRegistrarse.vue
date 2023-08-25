@@ -82,7 +82,7 @@
 @media (max-width: 768px) {
     .button {
         display: inline-flex;
-        padding: 1.5rem 1.5rem;
+        padding: 1.2rem 1.2rem;
         border: 0;
         position: relative;
         overflow: hidden;

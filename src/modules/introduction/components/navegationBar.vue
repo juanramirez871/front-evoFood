@@ -154,7 +154,6 @@ transform: translateY(0);
     display: flex;
     align-items: center;
     display: flex;
-    padding: 5rem;
 }
 }
 </style>

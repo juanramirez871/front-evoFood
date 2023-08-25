@@ -37,7 +37,9 @@
     box-sizing: border-box;
     margin-left: 6%;
 }
-
+.text h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Rango: mínimo, valor relativo, máximo */
+  }
 .celular {
     max-width: 30%;
     top: -15%;
