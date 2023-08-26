@@ -1,4 +1,5 @@
 <template>
+    <Header />
     home
 
     <Footer />
@@ -6,4 +7,5 @@
 
 <script setup>
 import Footer from '../../../shared/components/footer.vue';
+import Header from "../../../shared/components/header.vue"
 </script>
