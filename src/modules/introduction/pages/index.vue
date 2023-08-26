@@ -17,6 +17,9 @@
         <br>
         Menús digitales atractivos
     </div>
+    <div class="contentCenter">
+        <descripcionMitad />
+    </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br>
 </template>
@@ -25,9 +28,24 @@
 import navegationBarVue from '../components/navegationBar.vue';
 import botonRegistrarse from '../components/botonRegistrarse.vue';
 import descripcionInicioVue from '../components/descripcionInicio.vue';
+import descripcionMitad from '../components/descripcionMitad.vue';
 </script>
 
 <style scoped>
+/*body::-webkit-scrollbar{
+width: 10px;
+}
+body::-webkit-scrollbar-thumb{
+background-color: #0b4a75;
+border-radius: 100px;
+}
+body::-webkit-scrollbar-button{
+background-color: #C3D730;
+}
+body::-webkit-scrollbar-track-piece{
+background-color: transparent;
+}
+*/
 .template{
     width: 100%;
 }
@@ -68,6 +86,11 @@ import descripcionInicioVue from '../components/descripcionInicio.vue';
     display: flex;
     justify-content: center;
     width: 100%;
+}
+.contentCenter{
+    display: flex;
+    justify-content: center;
+    margin: 7%;
 }
 @media (max-width: 768px) {
     .imagen{

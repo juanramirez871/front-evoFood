@@ -8,6 +8,7 @@
                 Queremos que cada visita sea única y memorable.
             </h1>
         </div>
+        <div class="background2"></div>
         <div class="celular">
             <img src="../assets/celular.png" alt="">
         </div>
@@ -38,8 +39,31 @@
     margin-left: 6%;
 }
 .text h1 {
-    font-size: clamp(1.5rem, 4vw, 3rem); /* Rango: mínimo, valor relativo, máximo */
-  }
+    font-size: clamp(1.5rem, 2.7vw, 3rem); /* Rango: mínimo, valor relativo, máximo */
+}
+    .background {
+        position: absolute;
+        top: 5;
+        border-radius: 50%;
+        width: 40vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        filter: blur(90px);
+        background-image: linear-gradient( -45deg, #adbbdf 50%, #95b3ff8d 50% );
+        z-index : -1;
+    }
+    .background2 {
+        position: absolute;
+        top: 10%;
+        left : 65%;
+        border-radius: 50%;
+        width: 33vw;
+        height: 50vh;
+        filter: blur(40px);
+        background-image: linear-gradient( -45deg, #FFEF96 50%, #FFEF96 50% );
+        z-index : -1;
+    }
 .celular {
     max-width: 30%;
     top: -15%;
@@ -60,7 +84,7 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px); /* Altura de la animación */
+        transform: translateY(-15px); /* Altura de la animación */
     }
 }
 
@@ -73,13 +97,15 @@
     }
     .background {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(137, 43, 226, 0.25), rgba(30, 143, 255, 0.35));
-        clip-path: circle(28% at 50% 40%);
-        z-index: -1;
-        filter: blur(20px);
-        opacity: 0.8;
+        top: 30%;
+        border-radius: 40%;
+        width: 60vw;
+        height: 30vh;
+        filter: blur(60px);
+        background-image: linear-gradient( -45deg, #ffef96 50%, #95B3FF 50% );
+    }
+    .background2 {
+        display : none;
     }
     .text {
         max-width: 100%;
@@ -87,7 +113,7 @@
         padding: 20px;
         box-sizing: border-box;
         margin-left: 0;
-    }
+    }   
     h1{
         font-size: 1.5rem;
     }

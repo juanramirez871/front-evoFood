@@ -56,7 +56,7 @@ onBeforeUnmount(() => {
   width: 1.875rem; /* 30px en rem */
   height: 1.25rem; /* 20px en rem */
   margin: 1rem; /* 16px en rem */
-  z-index: 1; /* Coloca el botón por encima de otros elementos */
+  z-index: 999; /* Coloca el botón por encima de otros elementos */
 }
 
 .bar {
@@ -76,7 +76,7 @@ onBeforeUnmount(() => {
   background-color: #fff;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2); /* 10px en rem */
   overflow-x: hidden; /* Evita el desplazamiento horizontal */
-  z-index: 1000; /* Coloca el menú por encima de otros elementos */
+  z-index: 1100; /* Coloca el menú por encima de otros elementos */
 }
 .slide-enter-active,
 .slide-leave-active {
