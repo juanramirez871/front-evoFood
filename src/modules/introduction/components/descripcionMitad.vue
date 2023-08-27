@@ -24,39 +24,41 @@
 
     <!-- Primer bloque de colapsos -->
     <div class="demo-collapse">
-        <el-collapse @click="activeName = !activeName" accordion>
-            <el-collapse-item name="4">
-                <template #title>
-                    <div class="collapse-title">
-                        <img src="../assets/verifieduser.png" class="collapse-image" alt="">
-                        <span class="collapse-text">Tu Menú </span>
-                    </div>
-                </template>
-                    <h4>Personalización a tu medida: Adapta los platos según tus preferencias y necesidades dietéticas para una experiencia gastronómica única.</h4>
-            </el-collapse-item>
-        </el-collapse>
+        <div class="collapse-title cta">
+            <img src="../assets/verifieduser.png" class="collapse-image" alt="">
+            <span class="collapse-text" >Tu Menú </span>
+            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+            </svg>
+        </div>
+        <Transition name="bounce">
+            <p v-if="show" style="margin-top: 20px; text-align: center;">
+                Personalización a tu medida: Adapta los platos según tus preferencias y necesidades dietéticas para una experiencia gastronómica única.
+            </p>
+        </Transition>
     </div>
-
-    <!-- Segundo bloque de colapsos -->
-    <div class="demo-collapse esp">
-        <el-collapse @click="activeName = !activeName" accordion>
-            <el-collapse-item name="4">
-                <template #title>
-                    <div class="collapse-title">
-                        <img src="../assets/gift.png" class="collapse-image" alt="">
-                        <span class="collapse-text">Tecnología</span>
-                    </div>
-                </template>
-                    <h4>Experimenta la combinación perfecta de tecnología y gastronomía que te llevará a nuevas alturas culinarias.</h4>
-            </el-collapse-item>
-        </el-collapse>
+    <!-- segundo bloque de colapsos -->
+    <div class="demo-collapse">
+        <div class="collapse-title cta">
+            <img src="../assets/gift.png" class="collapse-image" alt="">
+            <span class="collapse-text"  >Tecnología</span>
+            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+            </svg>
+        </div>
+        <Transition name="bounce">
+            <p v-if="show" style="margin-top: 20px; text-align: center;">
+                Experimenta la combinación perfecta de tecnología y gastronomía que te llevará a nuevas alturas culinarias.
+            </p>
+        </Transition>
     </div>
 </div>
 </template>
     <script  setup>
             import { ref } from 'vue'
 
-            const activeName = ref(true)
+            const show = ref(true)
+            
     </script>
     <style scoped>
     h4 {
@@ -88,7 +90,8 @@
         }
         .demo-collapse{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: star;
         }
         .demo{
             display: none;
@@ -122,6 +125,7 @@
         .collapse-text:focus,
         .collapse-text:hover {
             color: #5353b8;
+            cursor:default;
         }
         
         .collapse-text:focus:after,
@@ -147,7 +151,35 @@
         font-weight: 500;
         margin-top: 10%;
     }
-
+    .bounce-enter-active {
+        animation: bounce-in 0.5s;
+        }
+        .bounce-leave-active {
+        animation: bounce-in 0.5s reverse;
+        }
+    @keyframes bounce-in {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.25);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
+    .cta svg {
+        transform: translateX(-8px);
+        transition: all 0.3s ease;
+    }
+    
+    .cta:hover svg {
+        transform: translateX(0);
+    }
+    
+    .cta:active svg {
+        transform: scale(0.9);
+    }
+}
     </style>
     
