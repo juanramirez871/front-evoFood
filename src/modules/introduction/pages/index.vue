@@ -20,6 +20,16 @@
     <div class="contentCenter">
         <descripcionMitad />
     </div>
+    <div class="contentForm">
+        <div class="formImg">
+            <div class="tarjeta">
+                <img src="../assets/tarjeta.png" alt="">
+            </div>
+        </div>
+        <div class="formRegistrer">
+            <registrerForm />
+        </div>
+    </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br>
 </template>
@@ -29,6 +39,7 @@ import navegationBarVue from '../components/navegationBar.vue';
 import botonRegistrarse from '../components/botonRegistrarse.vue';
 import descripcionInicioVue from '../components/descripcionInicio.vue';
 import descripcionMitad from '../components/descripcionMitad.vue';
+import registrerForm from '../components/registrerForm.vue';
 </script>
 
 <style scoped>
@@ -92,7 +103,37 @@ background-color: transparent;
     justify-content: center;
     margin: 7%;
 }
-@media (max-width: 768px) {
+.contentForm{
+    display: flex;
+    justify-content: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 70vh;
+}
+.formImg {
+    flex: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.formImg, .tarjeta{
+    display: flex;
+    justify-content: center;
+}
+.formImg .tarjeta img{
+    width : 20rem;
+}
+.formRegistrer {
+    flex: 80%;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding : 2%;
+}
+@media (max-width: 767px) {
     .imagen{
         display: flex;
         position: relative;
@@ -118,6 +159,28 @@ background-color: transparent;
         line-height: normal;
         justify-content: center;
         margin-top: 2%;
+    }
+    .contentCenter{
+        margin-bottom : 20%;
+    }
+
+}
+@media (max-width:1000px) {
+    .contentForm{
+        flex-direction: column;
+        margin-top : 12%;
+    }
+    .formImg {
+        flex: 10%;
+        display: flex;
+        z-index: 1;
+    }
+    .formRegistrer {
+        padding: 11%;
+        margin: -5%;
+    }
+    .formImg .tarjeta img{
+        width : 8rem;
     }
 }
 </style>

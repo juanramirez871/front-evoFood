@@ -32,9 +32,9 @@
             </svg>
         </div>
         <Transition name="bounce">
-            <p v-if="show" style="margin-top: 20px; text-align: center;">
+            <h4 v-if="show" style="margin-top: 20px; text-align: center;">
                 Personalización a tu medida: Adapta los platos según tus preferencias y necesidades dietéticas para una experiencia gastronómica única.
-            </p>
+            </h4>
         </Transition>
     </div>
     <!-- segundo bloque de colapsos -->
@@ -47,9 +47,9 @@
             </svg>
         </div>
         <Transition name="bounce">
-            <p v-if="show" style="margin-top: 20px; text-align: center;">
+            <h4 v-if="show" style="margin-top: 20px; text-align: center;">
                 Experimenta la combinación perfecta de tecnología y gastronomía que te llevará a nuevas alturas culinarias.
-            </p>
+            </h4>
         </Transition>
     </div>
 </div>
@@ -110,7 +110,7 @@
         
         .collapse-text {
             font-weight: bold;
-            font-size: 2rem;
+            font-size: 1.4rem;
             margin-right: 2rem; 
             color: #6969d3;
             cursor: pointer;
