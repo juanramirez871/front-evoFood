@@ -40,6 +40,7 @@
 }
 .text h1 {
     font-size: clamp(1.5rem, 2.7vw, 3rem); /* Rango: mínimo, valor relativo, máximo */
+    font-weight: inherit;
 }
     .background {
         position: absolute;

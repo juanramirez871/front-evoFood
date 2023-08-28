@@ -161,14 +161,17 @@ background-color: transparent;
         margin-top: 2%;
     }
     .contentCenter{
-        margin-bottom : 20%;
+        margin-bottom : 35% !important;
     }
+
 
 }
 @media (max-width:1000px) {
     .contentForm{
         flex-direction: column;
-        margin-top : 12%;
+    }
+    .contentCenter{
+        margin-bottom : 20%;
     }
     .formImg {
         flex: 10%;
