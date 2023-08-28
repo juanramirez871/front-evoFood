@@ -30,6 +30,7 @@
             <registrerForm />
         </div>
     </div>
+    dsfsfdf Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ut provident, consequuntur distinctio eveniet cum tempora animi officia odit obcaecati molestiae facere quibusdam maiores molestias, autem doloribus laboriosam consequatur sint?
 </div>
 <br><br><br><br><br><br><br><br><br><br>
 </template>
@@ -109,6 +110,7 @@ background-color: transparent;
     margin-right: 10%;
     margin-left: 10%;
     height: 70vh;
+    margin-bottom: 7%;
 }
 .formImg {
     flex: 20%;
@@ -163,12 +165,15 @@ background-color: transparent;
     .contentCenter{
         margin-bottom : 35% !important;
     }
-
+    .contentForm{
+        margin-bottom: 60% !important;
+    }
 
 }
 @media (max-width:1000px) {
     .contentForm{
         flex-direction: column;
+        margin-bottom: 30%;
     }
     .contentCenter{
         margin-bottom : 20%;

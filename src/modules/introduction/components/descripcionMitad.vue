@@ -85,6 +85,7 @@
     }
     @media (max-width: 768px) {
         .espacio{
+            margin-top: 10%;
             margin-bottom: 20%;
         }
         .text {

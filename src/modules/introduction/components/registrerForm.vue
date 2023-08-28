@@ -63,12 +63,19 @@
           <div class="btn">
             <myButton initial-text="INICIA SESIÓN" @click="toggleModal" />
           </div>
-          <teleport to='body'>
-            <div v-if="showModal" class="modal">
-              <button @click="toggleModal">cerrar</button>
-              <modalForm />
-            </div>
-        </Teleport>
+          <teleport to="body">
+            <transition name="modal-fade">
+              <div v-if="showModal">
+                <div class="backdrop" @click="toggleModal"></div>
+                <div class="modal-container">
+                  <div class="modal">
+                    <button class="close-button" @click="toggleModal">✖️</button>
+                    <modalForm />
+                  </div>
+                </div>
+              </div>
+            </transition>
+          </teleport>
         </el-form-item>
       
     </div>
@@ -78,7 +85,6 @@
   import { ref, reactive } from 'vue'
   import myButton from './myButton.vue'
   import modalForm from './modalForm.vue'
-
   const showModal = ref(false);
 
   const toggleModal = () => {
@@ -126,12 +132,44 @@
   .modal {
     position: fixed;
     z-index: 999;
-    top: 20%;
-    left: 50%;
-    width: 300px;
-    margin-left: -150px;
+    top: 15%;
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     color: white;
-    padding: 4rem;
+    align-items: center;
+    z-index: 999;
+}
+.close-button {
+  position: absolute;
+  top: 2.1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.close-button:hover{
+  font-size: 1.9rem;
+}
+.backdrop {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.296);
+  backdrop-filter: blur(3px); 
+}
+.modal-fade-enter-active, .modal-fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.modal-fade-enter, .modal-fade-leave-to {
+  opacity: 0;
 }
 @media (min-width: 768px) {
     .el-col.md-12 {
