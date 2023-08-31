@@ -84,7 +84,7 @@
       
           </div>
         </button>
-        <img src="../assets/hamburguesBtn.png" height="50px" class="hamburguer" alt=""> 
+        <img src="../assets/logoevogorro2.0.png" height="50px" class="hamburguer" alt=""> 
         
     </div>
 </template>
