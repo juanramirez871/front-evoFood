@@ -30,17 +30,29 @@
             <registrerForm />
         </div>
     </div>
-    dsfsfdf Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ut provident, consequuntur distinctio eveniet cum tempora animi officia odit obcaecati molestiae facere quibusdam maiores molestias, autem doloribus laboriosam consequatur sint?
+    <div class="cartas">
+        <cartaContainerVue cardText="Recibe toda la data 
+        de consumo de tus clientes" />
+        <cartaContainerVue cardText="¡Recomendaciones
+        personalizadas
+        para una experiencia
+        única!" />
+        <cartaContainerVue cardText="Disminuye los
+        tiempos de pedido" />
+    </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 import navegationBarVue from '../components/navegationBar.vue';
 import botonRegistrarse from '../components/botonRegistrarse.vue';
 import descripcionInicioVue from '../components/descripcionInicio.vue';
 import descripcionMitad from '../components/descripcionMitad.vue';
 import registrerForm from '../components/registrerForm.vue';
+import cartaContainerVue from '../components/cartaContainer.vue';
 </script>
 
 <style scoped>
@@ -135,6 +147,16 @@ background-color: transparent;
     justify-content: center;
     padding : 2%;
 }
+.cartas{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left : 5%;
+    margin-right : 5%;
+    gap: 10rem;
+    justify-items: center;
+    justify-content: center;
+    margin-top : 10%
+}
 @media (max-width: 767px) {
     .imagen{
         display: flex;
@@ -168,6 +190,9 @@ background-color: transparent;
     .contentForm{
         margin-bottom: 60% !important;
     }
+    .cartas{
+        margin-top : 35vh !important;
+    }
 
 }
 @media (max-width:1000px) {
@@ -189,6 +214,12 @@ background-color: transparent;
     }
     .formImg .tarjeta img{
         width : 8rem;
+    }
+    .cartas{
+        margin-left : 5%;
+        margin-right : 5%;
+        gap: 7rem;
+        margin-top : 45vh;
     }
 }
 </style>
