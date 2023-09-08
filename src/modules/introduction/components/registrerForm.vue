@@ -115,7 +115,6 @@
   }
   h1{
     color: #0C0A36;
-    font-family: Dosis;
     font-size: 2rem;
     font-style: normal;
     font-weight: 600;

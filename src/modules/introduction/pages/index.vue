@@ -3,9 +3,9 @@
     <div class="nav">
         <navegationBarVue />
     </div>
-        <div class="imagen">
-            <img src="../assets/rating.png" alt="">
-        </div>
+    <div class="imagen">
+        <img src="../assets/rating.png" alt="">
+    </div>
     <div class="content">
         <descripcionInicioVue />
     </div>
@@ -13,7 +13,7 @@
     <div class="center-button">
         <botonRegistrarse />
     </div>
-    <div class="menusdigitales">
+    <div class="titulo">
         <br>
         Menús digitales atractivos
     </div>
@@ -29,6 +29,16 @@
         <div class="formRegistrer">
             <registrerForm />
         </div>
+    </div>
+    <div class="titulo">
+        <br>
+        Ventajas de estar con nosotros
+        <div class="imagen-chulo">
+            <img src="../assets/listo.png" alt="">
+        </div>
+    </div>
+    <div class="waver">
+        <wavesStyle />
     </div>
     <div class="cartas">
         <cartaContainerVue cardText="Recibe toda la data 
@@ -53,6 +63,7 @@ import descripcionInicioVue from '../components/descripcionInicio.vue';
 import descripcionMitad from '../components/descripcionMitad.vue';
 import registrerForm from '../components/registrerForm.vue';
 import cartaContainerVue from '../components/cartaContainer.vue';
+import wavesStyle from '../components/waverStyle.vue';
 </script>
 
 <style scoped>
@@ -70,16 +81,23 @@ body::-webkit-scrollbar-track-piece{
 background-color: transparent;
 }
 */
-.template{
-    width: 100%;
-}
+
 .nav {
-    margin-bottom: 3rem;
+    margin-bottom: 3vh;
 }
 .imagen{
     display: flex;
     position: relative;
     margin-left: 20%;
+}
+.imagen-chulo{
+    display: flex;
+    position: relative;
+}
+.imagen-chulo img{
+    width: 10vw;
+    height: auto;
+    margin-left: 1%;
 }
 .content {
     display: flex;
@@ -95,16 +113,16 @@ background-color: transparent;
     margin-left: auto;
     margin-right: auto;
 }
-.menusdigitales{
+.titulo{
     color: #0C0A36;
-    font-family: Dosis;
     font-size: 3rem;
     font-style: normal;
     display: flex;
     font-weight: 700;
     line-height: normal;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 .carrusel {
     display: flex;
@@ -114,15 +132,14 @@ background-color: transparent;
 .contentCenter{
     display: flex;
     justify-content: center;
-    margin: 7%;
+    margin: 3%;
 }
 .contentForm{
     display: flex;
     justify-content: center;
     margin-right: 10%;
     margin-left: 10%;
-    height: 70vh;
-    margin-bottom: 7%;
+    height: auto;
 }
 .formImg {
     flex: 20%;
@@ -147,20 +164,24 @@ background-color: transparent;
     justify-content: center;
     padding : 2%;
 }
+.waver{
+    height: auto;
+    margin-bottom : -1%;
+}
 .cartas{
     display: flex;
     flex-wrap: wrap;
-    margin-left : 5%;
-    margin-right : 5%;
     gap: 10rem;
     justify-items: center;
     justify-content: center;
-    margin-top : 10%
+    align-items: center;
+    background-color:#b7b7b7;
+    height:auto;
+    padding : 5rem;
+
 }
 @media (max-width: 767px) {
     .imagen{
-        display: flex;
-        position: relative;
         margin-left: 0;
     }
     .content {
@@ -173,35 +194,19 @@ background-color: transparent;
     .imagen img {
         max-width: 50%;
     }
-    .menusdigitales{
-        color: #0e0b4f;
-        font-family: Dosis;
-        font-size: 1.9rem;
-        font-style: normal;
-        display: flex;
-        font-weight: 700;
-        line-height: normal;
-        justify-content: center;
-        margin-top: 2%;
+    .imagen-chulo img{
+        width: 18vw !important;
     }
-    .contentCenter{
-        margin-bottom : 35% !important;
+    .titulo{
+        font-size: 1.8rem;
+        margin-left : 4%;
+        margin-right : 4%;
+        margin-top : 7vh;
     }
-    .contentForm{
-        margin-bottom: 60% !important;
-    }
-    .cartas{
-        margin-top : 35vh !important;
-    }
-
 }
 @media (max-width:1000px) {
     .contentForm{
         flex-direction: column;
-        margin-bottom: 30%;
-    }
-    .contentCenter{
-        margin-bottom : 20%;
     }
     .formImg {
         flex: 10%;
@@ -215,11 +220,17 @@ background-color: transparent;
     .formImg .tarjeta img{
         width : 8rem;
     }
+    .waver{
+        margin-top : 10vh;
+    }
     .cartas{
-        margin-left : 5%;
-        margin-right : 5%;
-        gap: 7rem;
-        margin-top : 45vh;
+        gap: 2rem;
+    }
+    .imagen-chulo img{
+        width: 20vw;
+    }
+    .content, .formRegistrer, .cartas {
+        max-width: 100%;
     }
 }
 </style>

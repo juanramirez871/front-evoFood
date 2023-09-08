@@ -65,7 +65,6 @@
     <style scoped>
     h4 {
         color: #000000;
-        font-family: Dosis;
         font-size: clamp(1.1rem, 2vw, 2.3rem);
         font-style: normal;
         font-weight: 300;
