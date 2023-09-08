@@ -82,6 +82,7 @@ background-color: transparent;
 }
 */
 
+
 .nav {
     margin-bottom: 3vh;
 }
