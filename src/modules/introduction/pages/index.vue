@@ -30,25 +30,25 @@
             <registrerForm />
         </div>
     </div>
-    <div class="titulo">
-        <br>
-        Ventajas de estar con nosotros
-        <div class="imagen-chulo">
-            <img src="../assets/listo.png" alt="">
+    <div class="subtitulo2">
+        <div class="titulo">
+            <br>
+            Ventajas de estar con nosotros
+            <div class="imagen-chulo">
+                <img src="../assets/listo.png" alt="" width="150">
+            </div>
         </div>
     </div>
     <div class="waver">
         <wavesStyle />
     </div>
     <div class="cartas">
-        <cartaContainerVue cardText="Recibe toda la data 
-        de consumo de tus clientes" />
-        <cartaContainerVue cardText="¡Recomendaciones
-        personalizadas
-        para una experiencia
-        única!" />
-        <cartaContainerVue cardText="Disminuye los
-        tiempos de pedido" />
+        <cartaContainerVue
+        v-for="(carta) in cartas"
+        :key="carta.id"
+        :cardText="carta.cardText"
+        :imSrc=carta.imSrc
+        />
     </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br>
@@ -64,6 +64,27 @@ import descripcionMitad from '../components/descripcionMitad.vue';
 import registrerForm from '../components/registrerForm.vue';
 import cartaContainerVue from '../components/cartaContainer.vue';
 import wavesStyle from '../components/waverStyle.vue';
+import img1 from '../assets/modelos.png'
+import img2 from '../assets/bueno.png'
+import img3 from '../assets/hora.png'
+
+const cartas = ref([
+    {
+        id: 1,
+        cardText: "Recibe toda la data de consumo de tus clientes",
+        imSrc: img1
+    },
+    {
+        id: 2,
+        cardText: "¡Recomendaciones personalizadas para una experiencia única!",
+        imSrc: img2
+    },
+    {
+        id: 3,
+        cardText: "Disminuye los tiempos de pedido",
+        imSrc: img3
+    }
+]);
 </script>
 
 <style scoped>
@@ -92,13 +113,10 @@ background-color: transparent;
     margin-left: 20%;
 }
 .imagen-chulo{
-    display: flex;
     position: relative;
 }
 .imagen-chulo img{
-    width: 10vw;
-    height: auto;
-    margin-left: 1%;
+    max-width: 100%;
 }
 .content {
     display: flex;
@@ -123,7 +141,9 @@ background-color: transparent;
     line-height: normal;
     justify-content: center;
     margin-top: 7%;
-    margin-bottom: 7%;
+    margin-bottom: 5%;
+    text-align: center;
+
 }
 .carrusel {
     display: flex;
@@ -167,7 +187,7 @@ background-color: transparent;
 }
 .waver{
     height: auto;
-    margin-bottom : -1%;
+    margin-bottom : -4%;
 }
 .cartas{
     display: flex;
@@ -195,14 +215,9 @@ background-color: transparent;
     .imagen img {
         max-width: 50%;
     }
-    .imagen-chulo img{
-        width: 18vw !important;
-    }
     .titulo{
         font-size: 1.8rem;
-        margin-left : 4%;
-        margin-right : 4%;
-        margin-top : 7vh;
+        margin-top : 10vh;
     }
 }
 @media (max-width:1000px) {
@@ -224,11 +239,15 @@ background-color: transparent;
     .waver{
         margin-top : 10vh;
     }
+    .subtitulo2{
+        margin-right: 5%;
+        margin-left: 5%;
+    }
     .cartas{
         gap: 2rem;
     }
     .imagen-chulo img{
-        width: 20vw;
+        width: 22vw;
     }
     .content, .formRegistrer, .cartas {
         max-width: 100%;

@@ -1,13 +1,16 @@
 <template>
 <div>
     <div class="card">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="card-inner">
-            <p>{{cardText}}</p>
+    <div class="circle-fondo">
+        <div class="circle-img">
+        <img :src="imSrc" alt="">
         </div>
     </div>
-    
+    <div class="circle"></div>
+    <div class="card-inner">
+        <p>{{ cardText }}</p>
+    </div>
+    </div>
 </div>
 </template>
 
@@ -15,23 +18,24 @@
 import { ref } from 'vue';
 
 const props = defineProps({
-    cardText: String
+    cardText: String,
+    imSrc: String
 });
+
 </script>
 
 <style scoped>
 .card {
-    width: 190px;
-    height: 254px;
+    width: 200px;
+    height: auto;
     transition: all 0.2s;
     position: relative;
     cursor: pointer;
 }
 .card-inner {
     width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    height: 50%;
+
     backdrop-filter: blur(10px);
     border-radius: 8px;
     overflow: hidden;
@@ -40,40 +44,25 @@ const props = defineProps({
     align-items: center;
     color: black;
 }
-.card:hover {
-    transform: scale(1.04) rotate(1deg);
-}
-.circle {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(#f0e771, #fef280);
-    filter: blur(5px);
+
+.circle-fondo {
+    width: 25vh;
+    height: 25vh;
+    background-color: beige;
     border-radius: 50%;
-    position: absolute;
-    animation: move-up6 2s ease-in infinite alternate-reverse;
+    display: flex;
+    margin-bottom: 1em;
+    padding : 2%;
 }
-
-.circle:nth-child(1) {
-    top: -25px;
-    left: -25px;
+.circle-img {
+    display: flex;
+    width: inherit;
+    align-items: center;
+    justify-content: center;
 }
-
-.circle:nth-child(2) {
-    bottom: -25px;
-    right: -25px;
-    animation-name: move-down1;
-}
-
-@keyframes move-up6 {
-    to {
-        transform: translateY(-20px);
-    }
-    }
-
-    @keyframes move-down1 {
-    to {
-        transform: translateY(20px);
-    }
+.circle-img img {
+    width: 70%;
+    height: 70%;
 }
 
 </style>

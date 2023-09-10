@@ -56,7 +56,7 @@
           </el-col>
         </el-row>
       </el-form>
-        <el-form-item >
+        <div class="btns">
           <div class="btn">
             <myButton initial-text="REGISTRO"  />
           </div>
@@ -76,7 +76,7 @@
               </div>
             </transition>
           </teleport>
-        </el-form-item>
+        </div>
       
     </div>
   </template>
@@ -120,9 +120,10 @@
     font-weight: 600;
     line-height: normal;
   }
-  .contenedorBtn{
+  .btns{
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .btn{
     display: flex;
