@@ -1,24 +1,30 @@
 <template>
     <div class="body">
-        <svg width="380px" height="500px" viewBox="0 0 837 1045" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-    <path d="M353,9 L626.664028,170 L626.664028,487 L353,642 L79.3359724,487 L79.3359724,170 L353,9 Z" id="Polygon-1" stroke="#007FB2" stroke-width="6" sketch:type="MSShapeGroup"></path>
-    <path d="M78.5,529 L147,569.186414 L147,648.311216 L78.5,687 L10,648.311216 L10,569.186414 L78.5,529 Z" id="Polygon-2" stroke="#EF4A5B" stroke-width="6" sketch:type="MSShapeGroup"></path>
-    <path d="M773,186 L827,217.538705 L827,279.636651 L773,310 L719,279.636651 L719,217.538705 L773,186 Z" id="Polygon-3" stroke="#795D9C" stroke-width="6" sketch:type="MSShapeGroup"></path>
-    <path d="M639,529 L773,607.846761 L773,763.091627 L639,839 L505,763.091627 L505,607.846761 L639,529 Z" id="Polygon-4" stroke="#F2773F" stroke-width="6" sketch:type="MSShapeGroup"></path>
-    <path d="M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z" id="Polygon-5" stroke="#36B455" stroke-width="6" sketch:type="MSShapeGroup"></path>
-  </g>
-</svg>
-<div class="message-box">
-  <h1>404</h1>
-  <p>¡Vaya, has descubierto un plato vacío en nuestro menú digital! 🍽️ Pero no te preocupes, nuestro equipo culinario está trabajando en llenarlo de sabrosos enlaces. Mientras tanto, ¿por qué no vuelves a la página principal y sigues explorando las delicias que ya tenemos listas? ¡Que disfrutes! 😋</p>
-  <div class="buttons-con">
-    <div class="action-link-wrap">
-      <a @click="history.back(-1)" class="link-button link-back-button">Regresar</a>
-      <a @click="router.push('/')" class="link-button">Ir a la pagina de inicio</a>
+      <div class="content">
+        <div>
+          <div class="box-color"></div>
+          <div class="box-color2"></div>
+          <div class="box-color3"></div>
+          <div class="box-color4"></div>
+          <div class="content-img" style="position: relative;">
+            <img id="Polygon-4" src="@/assets/logo.png" alt="Logo">
+            <img id="Polygon-1" src="@/assets/404/hamburguesa.png" alt="Hamburguesa">
+            <img  id="Polygon-2" src="@/assets/404/helado.png" alt="Helado">
+            <img id="Polygon-3" src="@/assets/404/pollo.png" alt="pollo">
+          </div>
+        </div>
+        <div class="message-box">
+          <img class="logoMovil" src="@/assets/logo.png" alt="Logo">
+          <h1>404</h1>
+        <p>¡Vaya, has descubierto un plato vacío en nuestro menú digital! 🍽️ Pero no te preocupes, nuestro equipo culinario está trabajando en llenarlo de sabrosos enlaces. Mientras tanto, ¿por qué no vuelves a la página principal y sigues explorando las delicias que ya tenemos listas? ¡Que disfrutes! 😋</p>
+        <div class="buttons-con">
+          <div class="action-link-wrap">
+            <a @click="history.back(-1)" class="link-button link-back-button">Regresar</a>
+            <a @click="router.push('/')" class="link-button">Ir a la pagina de inicio</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
     </div>
 </template>
 
@@ -28,20 +34,54 @@ const router = useRouter();
 </script>
 
 <style scoped>
-svg {
+img {
+  width: 100px;
+}
+.content{
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-color, .box-color2, .box-color3, .box-color4{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -250px;
-  margin-left: -400px;
+  background-color: #0032EF;
+  filter: blur(70px);
+}
+
+.logoMovil{
+  display: none;
+}
+
+.box-color2{
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  height: 130px;
+}
+.box-color3{
+  width: 100px;
+  height: 130px;
+  right: 0;
+  top: 10rem;
+}
+
+.box-color4{
+  width: 100px;
+  height: 130px;
+  right: 0;
+  top: 0;
+  left: 20px;
+  bottom: 0;
+  margin: auto;
 }
 .message-box {
   height: 200px;
+  padding-left: 50px;
   width: 380px;
-  position: absolute;
-  top: 35%;
+  top: 40%;
   left: 50%;
-  margin-top: -100px;
+  margin-top: -200px;
   margin-left: 50px;
   color: rgb(30, 26, 26);
   font-family: Roboto;
@@ -74,19 +114,19 @@ svg {
 }
 
 #Polygon-1 , #Polygon-2 , #Polygon-3 , #Polygon-4 , #Polygon-4, #Polygon-5 {
-  animation: float 1s infinite ease-in-out alternate;
+  animation: float 2s infinite ease-in-out alternate;
 }
 #Polygon-2 {
-  animation-delay: .2s; 
+  animation-delay: .5s; 
 }
 #Polygon-3 {
-  animation-delay: .4s; 
+  animation-delay: .8s; 
 }
 #Polygon-4 {
-  animation-delay: .6s; 
-}
-#Polygon-5 {
-  animation-delay: .8s; 
+  position: absolute !important;
+  top: -60px !important;
+  width: 15em !important;
+  left: 40px !important;
 }
 
 @keyframes float {
@@ -94,39 +134,76 @@ svg {
     transform: translateY(20px);
   }
 }
+
+@media (max-width: 360px){
+.action-link-wrap{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+}
+.action-link-wrap * {
+  margin: 10px;
+}
+}
+
 @media (max-width: 450px) {
-  svg {
+  img {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -250px;
     margin-left: -190px;
   }
-  .message-box {
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -190px;
+  .logoMovil{
+    position: inherit;
     text-align: center;
+    margin-left: 80px;
+
   }
 }
 
 @media (max-width: 888px) {
-    .message-box {
-    height: 200px;
-    width: 380px;
-    position: absolute;
-    top: -150px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-top: -100px;
-    font-weight: 300;
-    margin: auto;
-    }
-
     svg{
         display: none;
     }
+    .message-box{
+      margin: 0;
+      padding: 0;
+      margin-top: -200px;
+      text-align: center;
+    }
+    .content-img{
+      display: none;
+    }
+    .logoMovil{
+      width: 15em;
+      display: block;
+      margin-left: 80px !important;
+      margin: 0;
+      margin: auto;
+    }
+    .box-color3{
+      display: none;
+    }
+
+}
+
+@media (min-width: 1600px){
+  .message-box{
+    height: 200px;
+    padding-left: 50px;
+    width: 600px;
+    top: 40%;
+    left: 50%;
+    margin-top: -370px;
+    margin-left: 50px;
+    color: rgb(30, 26, 26);
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 1.7rem;
+}
+.buttons-con .action-link-wrap a{
+    font-size: 0.5em;
+}
 }
 </style>

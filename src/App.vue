@@ -35,5 +35,8 @@ watch(route, () => {
 *{
 	font-family: 'Open Sans';
 }
+body{
+	margin: 0;
+}
 </style>
 
