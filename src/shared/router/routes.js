@@ -1,4 +1,5 @@
 import homeVue from "../../modules/home/routes";
+import introductionVue from "../../modules/introduction/routes"
 
 export default [
     {
@@ -13,5 +14,6 @@ export default [
         // meta: { name: 'Home', title: 'Proyectos' },
 		// // redirect: { name: 'login' }
     //},
-    ...homeVue
+    ...homeVue,
+    ...introductionVue
 ];
