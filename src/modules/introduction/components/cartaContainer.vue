@@ -7,6 +7,7 @@
         </div>
     </div>
     <div class="circle"></div>
+        <h2>{{ cardTitle}}</h2>
     <div class="card-inner">
         <p>{{ cardText }}</p>
     </div>
@@ -18,6 +19,7 @@
 import { ref } from 'vue';
 
 const props = defineProps({
+    cardTitle : String,
     cardText: String,
     imSrc: String
 });
@@ -30,25 +32,29 @@ const props = defineProps({
     height: auto;
     transition: all 0.2s;
     position: relative;
-    cursor: pointer;
 }
 .card-inner {
     width: 100%;
     height: 50%;
-
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    overflow: hidden;
     text-align: center;
     display: flex;
     align-items: center;
     color: black;
 }
-
+h2 {
+    text-align: center;
+    align-items: center;
+    color: #0C0A36;
+}
+p{
+    margin-top : -2%;
+    font-size: 1.2em;
+    font-weight: 400;
+}
 .circle-fondo {
     width: 25vh;
     height: 25vh;
-    background-color: beige;
+    background-color: #fcfaed;
     border-radius: 50%;
     display: flex;
     margin-bottom: 1em;
