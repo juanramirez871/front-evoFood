@@ -53,7 +53,6 @@
     </div>
 </div>
 <br><br><br>
-<footers />
 </template>
 
 <script setup>
@@ -69,7 +68,7 @@ import wavesStyle from '../components/waverStyle.vue';
 import img1 from '../assets/estadistica.png'
 import img2 from '../assets/bell.png'
 import img3 from '../assets/tiempo.png/'
-import footers from '../../../shared/components/footers.vue'
+// import footers from '../../../shared/components/footers.vue'
 
 const cartas = ref([
     {
