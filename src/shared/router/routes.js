@@ -1,5 +1,6 @@
 import homeVue from "../../modules/home/routes";
 import introductionVue from "../../modules/introduction/routes"
+import auth from "../../modules/auth/routes/index";
 
 export default [
     {
@@ -7,13 +8,7 @@ export default [
         component: () => import('../../modules/auth/pages/404.vue'),
         meta: { name: 'Not Found', title: "404 No Encontrado" },
     },
-    //{
-        // path: '/',
-        // name: 'home',
-        // component: () => import('../pages/home.vue'),
-        // meta: { name: 'Home', title: 'Proyectos' },
-		// // redirect: { name: 'login' }
-    //},
     ...homeVue,
-    ...introductionVue
+    ...introductionVue,
+    ...auth
 ];

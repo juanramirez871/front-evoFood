@@ -46,12 +46,13 @@
         <cartaContainerVue
         v-for="(carta) in cartas"
         :key="carta.id"
+        :cardTitle="carta.cardTitle"
         :cardText="carta.cardText"
         :imSrc=carta.imSrc
         />
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
 </template>
 
 <script setup>
@@ -64,23 +65,27 @@ import descripcionMitad from '../components/descripcionMitad.vue';
 import registrerForm from '../components/registrerForm.vue';
 import cartaContainerVue from '../components/cartaContainer.vue';
 import wavesStyle from '../components/waverStyle.vue';
-import img1 from '../assets/modelos.png'
-import img2 from '../assets/bueno.png'
-import img3 from '../assets/hora.png'
+import img1 from '../assets/estadistica.png'
+import img2 from '../assets/bell.png'
+import img3 from '../assets/tiempo.png/'
+// import footers from '../../../shared/components/footers.vue'
 
 const cartas = ref([
     {
         id: 1,
+        cardTitle : "Toma el Control",
         cardText: "Recibe toda la data de consumo de tus clientes",
         imSrc: img1
     },
     {
         id: 2,
+        cardTitle : "Experiencias Únicas",
         cardText: "¡Recomendaciones personalizadas para una experiencia única!",
         imSrc: img2
     },
     {
         id: 3,
+        cardTitle : "Optimiza la Experiencia",
         cardText: "Disminuye los tiempos de pedido",
         imSrc: img3
     }
@@ -196,7 +201,7 @@ background-color: transparent;
     justify-items: center;
     justify-content: center;
     align-items: center;
-    background-color:#b7b7b7;
+    background-color:#95B3FF;
     height:auto;
     padding : 5rem;
 

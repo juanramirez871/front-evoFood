@@ -61,21 +61,8 @@
             <myButton initial-text="REGISTRO"  />
           </div>
           <div class="btn">
-            <myButton initial-text="INICIA SESIÓN" @click="toggleModal" />
+            <myButton initial-text="INICIA SESIÓN" @click="() => router.push({ name: 'iniciar.seccion' })" />
           </div>
-          <teleport to="body">
-            <transition name="modal-fade">
-              <div v-if="showModal">
-                <div class="backdrop" @click="toggleModal"></div>
-                <div class="modal-container">
-                  <div class="modal">
-                    <button class="close-button" @click="toggleModal">✖️</button>
-                    <modalForm />
-                  </div>
-                </div>
-              </div>
-            </transition>
-          </teleport>
         </div>
       
     </div>
@@ -84,12 +71,12 @@
 <script setup>
   import { ref, reactive } from 'vue'
   import myButton from './myButton.vue'
-  import modalForm from './modalForm.vue'
-  const showModal = ref(false);
+  import { useRouter } from 'vue-router';
 
-  const toggleModal = () => {
-  showModal.value = !showModal.value;
-};
+
+  const router = useRouter()
+  console.log(router)
+
   const form = reactive({
     name: '',
 

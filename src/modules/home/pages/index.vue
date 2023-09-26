@@ -6,6 +6,6 @@
 </template>
 
 <script setup>
-import Footer from '../../../shared/components/footer.vue';
+import Footer from '../../../shared/components/footers.vue';
 import Header from "../../../shared/components/header.vue"
 </script>

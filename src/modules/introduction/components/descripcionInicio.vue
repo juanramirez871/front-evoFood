@@ -10,7 +10,7 @@
         </div>
         <div class="background2"></div>
         <div class="celular">
-            <img src="../assets/celular.png" alt="">
+            <img src="../assets/celularEvo2.0.png" alt="">
         </div>
     </div>
 </template>
@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: relative; /* Agregamos posición relativa */
+    position: relative;
     width: 100%;
 }
 .text {
@@ -39,7 +39,7 @@
     margin-left: 6%;
 }
 .text h1 {
-    font-size: clamp(1.5rem, 2.7vw, 3rem); /* Rango: mínimo, valor relativo, máximo */
+    font-size: clamp(1.5rem, 2.7vw, 3rem);
     font-weight: inherit;
 }
     .background {
@@ -71,7 +71,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    animation: floating 3.5s ease-in-out infinite; /* Agregamos la animación */
+    animation: floating 3.5s ease-in-out infinite;
 }
 
 .celular img {
