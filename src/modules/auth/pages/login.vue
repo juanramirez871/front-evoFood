@@ -13,7 +13,7 @@
         <div class="img2">
             <img src="../../introduction/assets/humano2.png" alt="" srcset="">
         </div>
-
+        
     </div>
 </div>
 </template>
@@ -35,15 +35,17 @@ import modalForm from '../../introduction/components/modalForm.vue'
     background-color: #e0dddd;
     display: flex;
     justify-content: center;
+    height: 100%;
 }
 .relleno {
     width: 100%;
     height: auto;
     max-width: 100%;
-    background-image: url('../../introduction/assets/Frame14.png');
+    /* background-image: url('../../introduction/assets/Frame14.png'); */
     background-size: cover;
     background-color: #afc2f4;
     position: relative;
+    border-radius: 100% 0% 0% 0%;
 }
 .img1{
     animation: floating 4.5s ease-in-out infinite;
@@ -54,9 +56,9 @@ import modalForm from '../../introduction/components/modalForm.vue'
     bottom: 245px;
 }
 .img3 {
-    left: 900px;
+    left: 1000px;
     position: relative;
-    bottom: 400px;
+    bottom: 200px;
     animation: floating 5.5s ease-in-out infinite;
 }
 @keyframes floating {
@@ -64,7 +66,7 @@ import modalForm from '../../introduction/components/modalForm.vue'
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px); /* Altura de la animación */
+        transform: translateY(-15px);
     }
 }
 @media (min-width: 768px) {
@@ -73,6 +75,11 @@ import modalForm from '../../introduction/components/modalForm.vue'
 }
 .form{
     width: 22rem;
+}
+}
+@media (max-width : 768px) {
+    .relleno{
+    display: none;
 }
 }
 </style>

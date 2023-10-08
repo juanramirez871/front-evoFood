@@ -57,7 +57,6 @@
     content: "";
     width: 300px;
     height: 60vh;
-    background-color: #f7eca9;
     transform: rotate(45deg);
     left: -180px;
     z-index: 1;

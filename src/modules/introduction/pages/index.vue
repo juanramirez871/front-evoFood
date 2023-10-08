@@ -93,20 +93,6 @@ const cartas = ref([
 </script>
 
 <style scoped>
-/*body::-webkit-scrollbar{
-width: 10px;
-}
-body::-webkit-scrollbar-thumb{
-background-color: #0b4a75;
-border-radius: 100px;
-}
-body::-webkit-scrollbar-button{
-background-color: #C3D730;
-}
-body::-webkit-scrollbar-track-piece{
-background-color: transparent;
-}
-*/
 
 
 .nav {
