@@ -61,7 +61,7 @@
             <myButton initial-text="REGISTRO"  />
           </div>
           <div class="btn">
-            <myButton initial-text="INICIA SESIÓN" @click="() => router.push({ name: 'iniciar.seccion' })" />
+            <myButton initial-text="INICIA SESIÓN" @click="() => router.push({ name: 'iniciar.sesion' })" />
           </div>
         </div>
       

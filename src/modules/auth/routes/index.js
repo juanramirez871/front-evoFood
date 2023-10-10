@@ -1,8 +1,8 @@
 export default [
     {
-		path:'/iniciar-seccion',
-		name: 'iniciar.seccion',
-		meta: { layout: 'default', title: 'iniciar seccion' },
+		path:'/login',
+		name: 'iniciar.sesion',
+		meta: { layout: 'default', title: 'iniciar sesion' },
 		component: () => import('../pages/login.vue'),
 	},
 ];

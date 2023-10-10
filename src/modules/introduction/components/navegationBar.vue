@@ -7,33 +7,43 @@
     <nav>
         <div class="menu-links">
             <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
-            <a :class="{ 'active-link': activeLink === 'Guia-Res' }" href="#" @click="setActiveLink('Guia-Res')">Guia-Res</a>
+            <a :class="{ 'active-link': activeLink === 'Guia-Res' }" href="#" @click="setActiveLink('Guia-Res')">Guia</a>
             <a :class="{ 'active-link': activeLink === 'Ingresar' }" href="#" @click="setActiveLink('Ingresar')">Ingresar</a>
         </div>
         <div class="menu-toggle">
-            <hamburguerMenu />
+            <buttonHamgurguer @click="toggleMenu" />
         </div>
     </nav>
     </div>
 </header>
+    <div class="bg-div" :class="{ 'active': menuOpen }">
+        <div>
+            <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
+            <a :class="{ 'active-link': activeLink === 'Guia-Res' }" href="#" @click="setActiveLink('Guia-Res')">Guia</a>
+            <a :class="{ 'active-link': activeLink === 'Ingresar' }" href="#" @click="setActiveLink('Ingresar')">Ingresar</a>
+        </div>
+    </div>
 </template>
 
 <script setup>
 import { ref, onMounted} from 'vue';
-import hamburguerMenu from './hamburguerMenu.vue';
+import buttonHamgurguer from '../../../shared/components/buttonHamgurguer.vue';
 
+const menuOpen = ref(false);
 const activeLink = ref(null);
 
+const toggleMenu = () => {
+    menuOpen.value = !menuOpen.value;
+};
 const setActiveLink = (link) => {
     activeLink.value = link;
 };
 onMounted(() => {
-    // Cambiar la opacidad y posición de la barra de navegación después de que el componente esté montado
     setTimeout(() => {
         const header = document.querySelector('.header');
         header.style.opacity = '1';
         header.style.transform = 'translateY(0)';
-    }, 100); // Agregar un pequeño retraso para asegurarse de que la transición funcione correctamente
+    }, 100);
 });
 </script>
 
@@ -41,7 +51,31 @@ onMounted(() => {
 *, *:before, *:after {
 box-sizing: inherit;
 }
-
+.bg-div {
+    background-color: #D9D9D9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+.bg-div.active {
+    opacity: 1;
+    border-radius: 0 0 80% 0;
+    pointer-events: auto;
+}
+.bg-div a {
+    color: #040233;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 7rem;
+}
 .header {
     position: fixed;
     top: 0;
