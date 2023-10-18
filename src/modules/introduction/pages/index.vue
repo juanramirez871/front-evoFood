@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="nav">
-        <navegationBarVue />
+        <Header />
     </div>
     <div class="imagen">
         <img src="../assets/rating.png" alt="">
@@ -52,13 +52,14 @@
         />
     </div>
 </div>
-<br><br><br>
+<Footer />
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-import navegationBarVue from '../components/navegationBar.vue';
+import Footer from '../../../shared/components/footer.vue';
+import Header from "../../../shared/components/header.vue"
 import botonRegistrarse from '../components/botonRegistrarse.vue';
 import descripcionInicioVue from '../components/descripcionInicio.vue';
 import descripcionMitad from '../components/descripcionMitad.vue';
