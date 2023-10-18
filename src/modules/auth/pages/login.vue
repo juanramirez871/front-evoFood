@@ -74,7 +74,7 @@ import modalForm from '../../introduction/components/modalForm.vue'
     flex-direction: row;
 }
 .form{
-    width: 22rem;
+    width: 60rem;
 }
 }
 @media (max-width : 768px) {

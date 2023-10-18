@@ -316,7 +316,7 @@ button {
     color: white;
     padding-left: 4em;
     padding-top: 0.1em;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.3em;
     transition: .4s ease-in-out;
     z-index: 3;
     font-weight: bold;

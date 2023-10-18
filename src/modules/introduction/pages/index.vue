@@ -132,8 +132,8 @@ const cartas = ref([
     font-weight: 700;
     line-height: normal;
     justify-content: center;
-    margin-top: 7%;
-    margin-bottom: 5%;
+    margin-top: 4%;
+    margin-bottom: 2%;
     text-align: center;
 
 }

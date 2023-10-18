@@ -19,8 +19,8 @@
         <p>¡Vaya, has descubierto un plato vacío en nuestro menú digital! 🍽️ Pero no te preocupes, nuestro equipo culinario está trabajando en llenarlo de sabrosos enlaces. Mientras tanto, ¿por qué no vuelves a la página principal y sigues explorando las delicias que ya tenemos listas? ¡Que disfrutes! 😋</p>
         <div class="buttons-con">
           <div class="action-link-wrap">
-            <a @click="history.back(-1)" class="link-button link-back-button">Regresar</a>
-            <a @click="router.push('/')" class="link-button">Ir a la pagina de inicio</a>
+            <a @click="goBack" class="link-button link-back-button">Regresar</a>
+            <a @click="() => router.push('/')" class="link-button">Ir a la pagina de inicio</a>
           </div>
         </div>
       </div>
@@ -31,6 +31,10 @@
 <script setup>
 import { useRouter } from 'vue-router';
 const router = useRouter();
+
+const goBack = () => {
+  history.back(-1)
+}
 </script>
 
 <style scoped>
@@ -102,7 +106,7 @@ img {
   border-radius: 4px;
   color: #FFF;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 17px;
   transition: all 0.3s linear;
   cursor: pointer;
   text-decoration: none;
@@ -203,7 +207,7 @@ img {
     font-size: 1.7rem;
 }
 .buttons-con .action-link-wrap a{
-    font-size: 0.5em;
+    font-size:  none;
 }
 }
 </style>

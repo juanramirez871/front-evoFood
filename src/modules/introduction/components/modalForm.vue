@@ -27,7 +27,7 @@
         <input type="password" class="inputField" id="password" placeholder="CONTRASEÑA">
     </div>
     <button id="button">INGRESAR</button>
-        <a class="forgotLink" href="#">¿olvidaste tú contraseña?</a>
+        <p><a class="forgotLink" href="#">¿olvidaste tú contraseña?</a></p>
     </form>
 </template>
 <script setup>
@@ -80,21 +80,23 @@
     justify-content: center;
     z-index: 2;
   }
-  
+
   .inputIcon {
     position: absolute;
     left: 3px;
+    width: 20px;
+    height: 20px;
   }
   
   .inputField {
     width: 100%;
+    font-size: 20px;
     height: 30px;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid rgb(173, 173, 173);
-    margin: 10px 0;
+    margin: 20px 0;
     color: black;
-    font-size: .8em;
     font-weight: 500;
     box-sizing: border-box;
     padding-left: 30px;
@@ -135,16 +137,15 @@
   
   .forgotLink {
     z-index: 2;
-    font-size: .7em;
+    font-size: 1em;
     font-weight: 500;
     color: rgb(31, 20, 74);
     text-decoration: none;
-    padding: 8px 15px;
     border-radius: 20px;
   }
   button {
     margin-top: 7vh;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     width: 320px;
     justify-content: center;
     display: flex;

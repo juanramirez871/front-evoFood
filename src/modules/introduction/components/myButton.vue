@@ -89,7 +89,7 @@
   </template>
   
   <script setup>
-  import { ref, defineProps, defineEmits } from 'vue';
+  import { ref, defineProps } from 'vue';
   
   const props = defineProps({
     initialText: String
@@ -105,27 +105,33 @@
     justify-content: center;
     transform: translate(0%,25%);
 }
+
 button {
-    width: 13em;
-    height: 3.5em;
-    border: none;
-    display: flex;
-    align-items: center;
-    background-color: #171717;
-    border-radius: 15px;
-    z-index: 3;
-    overflow: hidden;
-    transition: .4s ease-in-out;
-    cursor: pointer;
+  width: 13em;
+  height: 3.5em;
+  border: none;
+  display: flex;
+  align-items: center;
+  background-color: #171717;
+  border-radius: 15px;
+  z-index: 3;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
 }
+
 .text {
     color: white;
-    padding-left: 1.5em;
+    padding-left: 4em;
     padding-top: 0.1em;
-    letter-spacing: 0.6em;
+    letter-spacing: 0.3em;
     transition: .4s ease-in-out;
     z-index: 3;
     font-weight: bold;
+    text-align: center;
+    width: 100%;
 }
 .fondo {
     position: relative;

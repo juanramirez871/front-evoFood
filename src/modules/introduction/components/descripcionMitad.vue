@@ -75,12 +75,14 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        margin-top: 50px !important;
     }
     .imagen img {
         max-width: 100%;
     }
     .demo-collapse{
         display: none;
+        margin-top: 50px;
     }
     @media (max-width: 768px) {
         .espacio{
@@ -104,6 +106,7 @@
         .collapse-title {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         .esp{
             margin-top: 20%;
