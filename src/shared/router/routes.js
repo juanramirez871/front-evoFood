@@ -1,5 +1,6 @@
 import homeVue from "../../modules/home/routes";
 import introductionVue from "../../modules/introduction/routes"
+import plantillaVue from "../../modules/plantilla/routes"
 import auth from "../../modules/auth/routes/index";
 
 export default [
@@ -10,5 +11,6 @@ export default [
     },
     ...homeVue,
     ...introductionVue,
+    ...plantillaVue,
     ...auth
 ];
