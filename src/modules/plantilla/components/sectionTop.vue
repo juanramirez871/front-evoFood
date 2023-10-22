@@ -22,7 +22,7 @@
     import { Picture as IconPicture } from '@element-plus/icons-vue'
     const errorHandler = () => true
 </script>
-<style>
+<style scoped>
     .demo-type{
         display: flex;
         justify-content: center;
@@ -32,9 +32,9 @@
     }
     .demo-image__error .el-image {
         max-width: 100%;
-        max-height: 40vh;
+        max-height: 55vh;
         width: 100%;
-        height: 50vh;
+        height: 100vh;
     }
 
     .demo-image__error .image-slot {

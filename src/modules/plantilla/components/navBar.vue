@@ -8,7 +8,7 @@
         <div class="menu-links">
             <buttonSearch />
             <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
-            <a :class="{ 'active-link': activeLink === 'Menus' }" href="#" @click="setActiveLink('Menus')">Menus</a>
+            <a :class="{ 'active-link': activeLink === 'Menus' }" href="#" @click="setActiveLink('Menus')">Menús</a>
             <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
         </div>
         <div class="menu-toggle">
@@ -86,14 +86,11 @@ box-sizing: inherit;
     right: 0;
     z-index: 1000;
     width: 100%;
-    opacity: 0;
     transition: opacity 1s ease-in-out;
     background: linear-gradient(180deg, #1f1f20 0%, rgba(26, 25, 25, 0.982) 100%);
     color: rgb(245, 236, 236);
-    opacity: 0;
     transform: translateY(-20px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    /* box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25); */
     border-bottom-right-radius: 219px;
     border-bottom-left-radius: 219px;
 }
