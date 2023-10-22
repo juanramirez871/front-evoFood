@@ -2,14 +2,14 @@
     <header class="header">
     <div class="header-container">
     <a class="logo" href="./">
-        <img src="" alt="Logo">
+        <img src="../../introduction/assets/logoevofood.png" alt="Logo">
     </a>
     <nav>
         <div class="menu-links">
-            <buttonSearch />
             <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
             <a :class="{ 'active-link': activeLink === 'Menus' }" href="#" @click="setActiveLink('Menus')">Menús</a>
             <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
+            <buttonSearch />
         </div>
         <div class="menu-toggle">
             <hamburguerButton @click="toggleMenu" />
@@ -68,7 +68,6 @@ box-sizing: inherit;
 }
 .bg-div.active {
     opacity: 1;
-    border-radius: 0 0 80% 0;
     pointer-events: auto;
 }
 .bg-div a {
