@@ -59,7 +59,7 @@
 import { ref } from 'vue';
 
 import Footer from '../../../shared/components/footer.vue';
-import Header from "../../../shared/components/header.vue"
+import Header from "../../plantilla/components/navBar.vue"
 import botonRegistrarse from '../components/botonRegistrarse.vue';
 import descripcionInicioVue from '../components/descripcionInicio.vue';
 import descripcionMitad from '../components/descripcionMitad.vue';

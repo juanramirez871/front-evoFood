@@ -124,7 +124,7 @@ button {
 
 .text {
     color: white;
-    padding-left: 2em;
+    padding-left: 4em;
     padding-top: 0.1em;
     letter-spacing: 0.3em;
     transition: .4s ease-in-out;

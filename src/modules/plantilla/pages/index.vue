@@ -2,7 +2,6 @@
 <div>
     <navBar />
 </div>
-<br><br><br><br>
 <sectionTop />
 <h1>Más vendidos</h1>
 <br>
@@ -37,7 +36,6 @@ import recommended from '../components/recommended.vue'
 import footerR from '../components/footerR.vue'
 import sectionMenus from '../components/sectionMenus.vue'
 
-
 </script>
 
 <style scoped>
@@ -49,7 +47,6 @@ import sectionMenus from '../components/sectionMenus.vue'
         display: flex;
         gap: 2rem;
         justify-content: center;
-        width: max-content;
         margin-left: 2rem;
         margin-right: 2rem;
     }
