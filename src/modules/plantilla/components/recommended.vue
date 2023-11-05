@@ -33,8 +33,14 @@
 	</div>
 </div>
 <el-drawer v-model="drawer" title="Selecciona a tu gusto"  :size="getDrawerSize()">
-    <div class="imgFoot">
-        <img src="https://marketing4ecommerce.net/wp-content/plugins/accelerated-mobile-pages/images/SD-default-image.png" alt="comida">
+    <div class="imgFoot" style="position: relative;">
+        <img :src="image" alt="comida" style="border-radius: 5px;">
+        <div style="position: absolute; right: 50px; bottom: 0;">
+            <EditImage
+              @uploadImage="uploadImage"
+              :aspectRatio="[16, 9]"
+            />
+        </div>
     </div>
     <div class="titulo">
         <h1>Titulo</h1>
@@ -164,10 +170,10 @@
 
 <script setup>
 import { ref } from 'vue';
-
+import EditImage from "../../../shared/components/EditImage.vue";
 const checkList = ref(['selected and disabled', 'Option A', 'Option B'])
 const checkList2 = ref(['selected and disabled'])
-
+const image = ref("")
 const drawer = ref(false);
 const getDrawerSize = () => {
     return window.innerWidth < 768 ? '100%' : '50%';
@@ -176,6 +182,9 @@ const getDrawerSize = () => {
 const num = ref(1)
 const handleChange = () => {
     console.log(value)
+}
+const uploadImage = ({ base64 }) => {
+    image.value = base64;
 }
 
 const value = ref('')

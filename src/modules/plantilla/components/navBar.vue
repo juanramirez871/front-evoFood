@@ -1,8 +1,15 @@
 <template>
     <header class="header">
     <div class="header-container">
-    <a class="logo" href="./">
-        <img src="../../introduction/assets/logoevofood.png" alt="Logo">
+    <a class="logo">
+        <img v-if="!imgLogo" src="../../introduction/assets/logoevofood.png" alt="Logo">
+        <img v-else :src="imgLogo" alt="Logo">
+        <div style="position: absolute; right: 15px; bottom: 0;">
+            <EditImage
+              @uploadImage="uploadImageLogo"
+              :aspectRatio="[9, 3]"
+            />
+        </div>
     </a>
     <nav>
         <div class="menu-links">
@@ -31,16 +38,22 @@
 import { ref, onMounted} from 'vue';
 import hamburguerButton from './hamburguerButton.vue'
 import buttonSearch from './buttonSearch.vue'
+import EditImage from "../../../shared/components/EditImage.vue";
 
 const menuOpen = ref(false);
 const activeLink = ref(null);
-
+const imgLogo = ref()
 const toggleMenu = () => {
     menuOpen.value = !menuOpen.value;
 };
 const setActiveLink = (link) => {
     activeLink.value = link;
 };
+
+const uploadImageLogo = ({ base64 }) => {
+    imgLogo.value = base64;
+}
+
 onMounted(() => {
     setTimeout(() => {
         const header = document.querySelector('.header');
@@ -61,7 +74,7 @@ box-sizing: inherit;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9;
+    z-index: 7;
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -84,7 +97,7 @@ box-sizing: inherit;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 3 !important;
     width: 100%;
     transition: opacity 1s ease-in-out;
     background: linear-gradient(180deg, #1f1f20 0%, rgba(26, 25, 25, 0.982) 100%);
@@ -107,6 +120,7 @@ box-sizing: inherit;
     display: flex;
     align-items: center;
     text-decoration: none;
+    position: relative;
     padding-left: 1rem;
 }
 .logo img {
@@ -180,7 +194,7 @@ transform: translateY(0);
     align-items: center;
 }
 /* Estilos responsivos */
-@media screen and (max-width: 946px) {
+@media screen and (max-width: 1200px) {
 .menu-links {
     display: none;
 }

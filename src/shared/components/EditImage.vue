@@ -2,7 +2,7 @@
   <div class="live-demo">
     <section class="section">
       <button class="select-picture">
-        <i class="fa-solid fa-pen-to-square" style="font-size: 25px"></i>
+        <i class="fa-solid fa-pen-to-square" style="font-size: 20px; background-color: white; border-radius: 5px; padding: 5px;color: black"></i>
         <input
           ref="uploadInput"
           type="file"
@@ -146,7 +146,7 @@ async function getResult() {
     align-items: flex-start;
     position: absolute;
     bottom: -20px;
-    z-index: 3;
+    z-index: 2;
     margin: auto;
   }
   .select-picture {
@@ -189,13 +189,14 @@ async function getResult() {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    z-index: 99;
+    z-index: 160 !important;
     .modal-mask {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 150 !important;
       background-color: rgb(0 0 0 / 91%);
     }
     .modal-scroll-view {
@@ -205,10 +206,11 @@ async function getResult() {
       width: 100%;
       height: 100%;
       overflow: auto;
+      z-index: 160 !important;
     }
     .modal {
       position: relative;
-      top: 100px;
+      top: 30px;
       width: 800px;
       max-width: calc(100vw - var(--demo-spacing));
       background-color: var(--vp-c-bg-soft);

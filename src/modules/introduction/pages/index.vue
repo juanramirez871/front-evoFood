@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="nav">
-        <Header />
+        <!-- <Header /> -->
     </div>
     <div class="imagen">
         <img src="../assets/rating.png" alt="">

@@ -1,6 +1,6 @@
 <template>
   <div class="demo-image__error">
-    <div class="block" style="position: relative;">
+    <div class="block" style="position: relative">
       <el-image :src="coverImage">
         <template #error>
           <div class="image-slot">
@@ -9,13 +9,13 @@
             </el-icon>
           </div>
         </template>
-    </el-image>
-    <div style="right: 60px; position: absolute; bottom: 10px;">
+      </el-image>
+      <div style="right: 60px; position: absolute; bottom: 10px">
         <EditImage
           @uploadImage="uploadImageCover"
-          :aspectRatio="[16, 9]"
+          :aspectRatio="[13, 6]"
         />
-  </div>
+      </div>
     </div>
   </div>
   <div class="demo-type">
@@ -51,7 +51,6 @@ const uploadImageCover = ({ base64 }) => {
 .demo-type {
   display: flex;
   justify-content: center;
-  z-index: 2;
   position: relative;
   bottom: 6rem;
 }
