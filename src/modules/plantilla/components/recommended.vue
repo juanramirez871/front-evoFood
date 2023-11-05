@@ -43,7 +43,9 @@
         </div>
     </div>
     <div class="titulo">
-        <h1>Titulo</h1>
+        <h1>
+            <InputEdit v-model="title" class-text="f-14" />
+        </h1>
     </div>
     <div class="seleccion">
         <el-row :gutter="20">
@@ -171,9 +173,11 @@
 <script setup>
 import { ref } from 'vue';
 import EditImage from "../../../shared/components/EditImage.vue";
+import InputEdit from "../../../shared/components/InputEdit.vue";
 const checkList = ref(['selected and disabled', 'Option A', 'Option B'])
 const checkList2 = ref(['selected and disabled'])
-const image = ref("")
+const image = ref("");
+const title = ref("Titulo");
 const drawer = ref(false);
 const getDrawerSize = () => {
     return window.innerWidth < 768 ? '100%' : '50%';

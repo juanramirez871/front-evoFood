@@ -97,7 +97,7 @@ box-sizing: inherit;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 3 !important;
+    z-index: 100 !important;
     width: 100%;
     transition: opacity 1s ease-in-out;
     background: linear-gradient(180deg, #1f1f20 0%, rgba(26, 25, 25, 0.982) 100%);
