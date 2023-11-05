@@ -83,7 +83,6 @@
     font-size: 1em;
     color: white;
     transition: all 0.3s ease;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .search_input::placeholder {
@@ -101,5 +100,14 @@
     box-sizing: border-box;
     fill: white;
     font-size: 1.3em;
+    }
+    @media (max-width:768px) {
+        .checkbox:checked ~ .mainbox .search_input {
+    width: 150px;
+    height: 150px;
+    }
+    .checkbox:checked ~ .mainbox {
+    width: 250px;
+    }
     }
 </style>

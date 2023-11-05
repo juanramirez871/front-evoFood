@@ -61,7 +61,7 @@ box-sizing: inherit;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 9;
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -77,6 +77,7 @@ box-sizing: inherit;
     justify-content: center;
     width: 100%;
     margin-top: 7rem;
+    text-decoration: unset;
 }
 .header {
     position: fixed;

@@ -61,4 +61,11 @@ import sectionMenus from '../components/sectionMenus.vue'
         row-gap: 2rem;
         column-gap: 2rem;
     }
+    @media (max-width:768px) {
+        .recomendados{
+        justify-content: start;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    }
 </style>
