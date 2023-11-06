@@ -56,13 +56,16 @@
                     </h3>
                 </div>
                 <br>
-                <div>
-                    <el-checkbox-group v-model="checkList">
-                        <el-checkbox label="Option A" />
-                        <el-checkbox label="Option B" />
-                        <el-checkbox label="Option C" />
-                        <el-checkbox label="disabled" disabled />
-                    </el-checkbox-group>
+                <div style="display: flex;flex-wrap: wrap;gap: 10px;">
+                    <div v-for="(ingrediente, i) in ingredientes" :key="i" style="width: min-content">
+                        <div style="width: max-content;display: flex;">
+                            <input type="checkbox" :id="ingrediente?.label" :value="ingrediente?.label" :checked="ingrediente?.checkBox" />
+                            <InputEdit v-model="ingrediente.label" class-text="f-14" />
+                        </div>
+                    </div>
+                    <div @click="newIngrediente">
+                        <i class="fa-solid fa-plus" style="color: black; cursor: pointer; margin-left: 10px; margin-top: 20px;"></i>
+                    </div>
                 </div>
             </el-col>
             <el-col :span="12"><div />
@@ -72,13 +75,16 @@
                     </h3>
                 </div>
                 <br>
-                <div>
-                    <el-checkbox-group v-model="checkList2">
-                        <el-checkbox label="Option A" />
-                        <el-checkbox label="Option B" />
-                        <el-checkbox label="Option C" />
-                        <el-checkbox label="disabled" disabled />
-                    </el-checkbox-group>
+                <div style="display: flex;flex-wrap: wrap;gap: 10px;">
+                    <div v-for="(addicional, i) in adiccionales" :key="i" style="width: min-content">
+                        <div style="width: max-content;display: flex;">
+                            <input type="checkbox" :id="addicional?.label" :value="addicional?.label" :checked="addicional?.checkBox" />
+                            <InputEdit v-model="addicional.label" class-text="f-14" />
+                        </div>
+                    </div>
+                    <div @click="newAdiccional">
+                        <i class="fa-solid fa-plus" style="color: black; cursor: pointer; margin-left: 10px; margin-top: 20px;"></i>
+                    </div>
                 </div>
             </el-col>
         </el-row>
@@ -182,6 +188,44 @@ const drawer = ref(false);
 const getDrawerSize = () => {
     return window.innerWidth < 768 ? '100%' : '50%';
 };
+const ingredientes = ref([
+    {
+        label: "opcion 1",
+        checkBox: true
+    },
+    {
+        label: "opcion 2",
+        checkBox: true
+    },
+    {
+        label: "opcion 3",
+        checkBox: true
+    },
+    {
+        label: "opcion 4",
+        checkBox: false
+    }
+])
+
+
+const adiccionales = ref([
+    {
+        label: "opcion 1",
+        checkBox: true
+    },
+    {
+        label: "opcion 2",
+        checkBox: true
+    },
+    {
+        label: "opcion 3",
+        checkBox: true
+    },
+    {
+        label: "opcion 4",
+        checkBox: false
+    }
+])
 
 const num = ref(1)
 const handleChange = () => {
@@ -214,6 +258,15 @@ const value = ref('')
         label: 'Option5',
     },
 ]
+
+const newIngrediente = () => {
+    ingredientes.value.push({ label: "Nuevo Ingrediente", checkBox: false })
+}
+
+const newAdiccional = () => {
+    adiccionales.value.push({ label: "Nuevo Ingrediente", checkBox: false })
+}
+
 </script>
 
 <style scoped>

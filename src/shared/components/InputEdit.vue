@@ -45,6 +45,7 @@ const model = computed({
 })
 
 function change() {
+	if(model.value == "") return
 	editing.value = false;
 	model.value = model.value.trim();
 	emit('change', model.value.trim());
@@ -62,5 +63,8 @@ function setEdit() {
 <style>
 .input-edit:hover {
 	box-shadow: 0 0 0 2px var(--border) inset !important;
+}
+.input-edit{
+	width: auto;
 }
 </style>
