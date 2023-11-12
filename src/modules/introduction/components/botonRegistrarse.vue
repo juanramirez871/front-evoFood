@@ -314,7 +314,7 @@ button {
 
 .text {
     color: white;
-    padding-left: 4em;
+    padding-left: 2.6em;
     padding-top: 0.1em;
     letter-spacing: 0.3em;
     transition: .4s ease-in-out;

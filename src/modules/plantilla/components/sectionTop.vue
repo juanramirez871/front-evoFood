@@ -74,4 +74,10 @@ const uploadImageCover = ({ base64 }) => {
 .demo-image__error .image-slot .el-icon {
   font-size: 30px;
 }
+@media (max-width:768px) {
+    .demo-image__error .el-image {
+      max-height: 55vh;
+      height: 35vh;
+  }
+}
 </style>

@@ -163,6 +163,8 @@ const cartas = ref([
 .formImg, .tarjeta{
     display: flex;
     justify-content: center;
+    position: relative;
+    right: -1rem;
 }
 .formImg .tarjeta img{
     width : 20rem;
