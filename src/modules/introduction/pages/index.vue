@@ -3,6 +3,7 @@
     <div class="nav">
         <!-- <Header /> -->
     </div>
+    <el-backtop :right="50" :bottom="100" />
     <div class="imagen">
         <img src="../assets/rating.png" alt="">
     </div>
