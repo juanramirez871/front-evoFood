@@ -35,7 +35,7 @@
         <el-checkbox label="Simple brand exposure" name="type" />
         </el-checkbox-group>
     </el-form-item>
-    <el-form-item label="Instant delivery">
+    <el-form-item label="Destacar">
         <el-switch v-model="form.delivery" />
     </el-form-item>
     <el-form-item>

@@ -1,23 +1,37 @@
 <template>
     <div>
-    <div>
         <h1>Empleados</h1>
     </div>
-    <div>
-        <el-table :data="tableData" height="500" style="width: 100%">
-        <el-table-column prop="name" label="Nombre" width="180" />
-        <el-table-column prop="email" label="Correo" width="180" />
-        <el-table-column prop="phone" label="Telefono" width="180" />
-        <el-table-column prop="position" label="Cargo" width="180" />
-        <el-table-column prop="salary" label="Salario" width="180" />
-        <el-table-column prop="address" label="Dirección" />
-        <el-table-column label="Opciones" />
-        </el-table>
-    </div>
-    </div>
+    <el-table :data="filterTableData" style="width: 100%">
+    <el-table-column label="Name" prop="name" />
+    <el-table-column label="Email" prop="email" />
+    <el-table-column label="Telefono" prop="phone" />
+    <el-table-column label="Cargo" prop="position" />
+    <el-table-column label="Dirección" prop="address" />
+    <el-table-column label="Salario" prop="salary" />
+    <el-table-column align="right">
+        <template #header>
+        <el-input v-model="search" size="small" placeholder="Buscar" />
+        </template>
+        <template #default="scope">
+        <el-button size="small" @click="handleEdit(scope.$index, scope.row)"
+            >Edit</el-button
+        >
+        <el-button
+            size="small"
+            type="danger"
+            @click="handleDelete(scope.$index, scope.row)"
+            >Delete</el-button
+        >
+        </template>
+    </el-table-column>
+    </el-table>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue';
+
+const search = ref('');
 const tableData = [
     {
         name: 'Tom',
@@ -101,7 +115,24 @@ const tableData = [
     },
 ];
 
+const filterTableData = computed(() =>
+    tableData.filter(
+    (data) =>
+        !search.value ||
+        data.name.toLowerCase().includes(search.value.toLowerCase())
+    )
+);
+
+const handleEdit = (index, row) => {
+    console.log(index, row);
+};
+
+const handleDelete = (index, row) => {
+    console.log(index, row);
+};
 </script>
+
+
 <style scoped>
 h1{
     display: flex;

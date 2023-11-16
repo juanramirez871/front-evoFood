@@ -1,10 +1,15 @@
 <template>
     <footer>
     <h4>EvoFood</h4>
+    <br>
+    <div class="iconos">
+        <Iconos/>
+    </div>
     </footer>
 </template>
 
 <script setup>
+import Iconos from './Iconos.vue';
 </script>
 
 <style scoped>
@@ -19,5 +24,9 @@
     }
     *{
         margin: 0;
+    }
+    .iconos{
+        display: flex;
+        justify-content: center;
     }
 </style>

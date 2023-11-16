@@ -9,5 +9,9 @@
 </script>
 
 <style scoped>
-
+h1{
+    display: flex;
+    justify-content: center;
+    color: #727477;
+}
 </style>

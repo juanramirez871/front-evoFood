@@ -6,6 +6,7 @@
     <div class="navegation">
         <Navegation @section="changeSection" />
     </div>
+    <el-backtop :right="20" :bottom="10" class="subir"/>
     <div class="panel">
         <Panel v-if="currentSection == 'panel'" />
         <Perfil v-if="currentSection == 'perfil'" />
@@ -50,5 +51,8 @@ function changeSection(section){
     width: 100%;
     margin-top: 2rem;
     margin-right: 1rem;
+}
+.subir{
+    background-color: #727477;
 }
 </style>

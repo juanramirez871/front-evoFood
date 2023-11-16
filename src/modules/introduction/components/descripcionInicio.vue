@@ -10,12 +10,14 @@
         </div>
         <div class="background2"></div>
         <div class="celular">
-            <img src="../assets/celularEvo2.0.png" alt="">
+            <Phone/>
+            <!-- <img src="../assets/celularEvo2.0.png" alt=""> -->
         </div>
     </div>
 </template>
 
 <script setup>
+import Phone from './Phone.vue';
 </script>
 
 <style scoped>
@@ -67,18 +69,18 @@
     }
 .celular {
     max-width: 30%;
-    top: -15%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     animation: floating 3.5s ease-in-out infinite;
+    margin-right: 10%
 }
 
-.celular img {
+/* .celular img {
     max-width: 100rem;
     height: auto;
     object-fit: contain;
-}
+} */
 
 @keyframes floating {
     0%, 100% {
@@ -120,12 +122,14 @@
     }
 
     .celular {
+        margin-top: 10%;
         max-width: 100%;
+        margin-right: 0%
     }
-    .celular img {
+    /* .celular img {
         max-width: 30em;
         height: auto;
         object-fit: contain;
-    }
+    } */
 }
 </style>

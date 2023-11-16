@@ -3,7 +3,7 @@
     <div class="nav">
         <!-- <Header /> -->
     </div>
-    <el-backtop :right="50" :bottom="100" />
+    <el-backtop :right="20" :bottom="100" />
     <div class="imagen">
         <img src="../assets/rating.png" alt="">
     </div>
@@ -14,8 +14,8 @@
     <div class="center-button">
         <botonRegistrarse />
     </div>
-    <div class="titulo">
         <br>
+    <div class="titulo">
         Menús digitales atractivos
     </div>
     <div class="contentCenter">
@@ -52,6 +52,13 @@
         :imSrc=carta.imSrc
         />
     </div>
+    <div class="titulo">
+        Preguntas Frecuentes
+    </div>
+    <div>
+        <PQR/>
+    </div>
+    <br>
 </div>
 <Footer />
 </template>
@@ -70,6 +77,7 @@ import wavesStyle from '../components/waverStyle.vue';
 import img1 from '../assets/estadistica.png'
 import img2 from '../assets/bell.png'
 import img3 from '../assets/tiempo.png/'
+import PQR from '../components/PQR.vue'
 // import footers from '../../../shared/components/footers.vue'
 
 const cartas = ref([

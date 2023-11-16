@@ -1,7 +1,67 @@
 <template>
-<div>
-    <h1>Suscripcion</h1>
-</div>
+    <div>
+        <h1>Suscripción</h1>
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="header">
+                    <span class="title">Beginner</span>
+                    <span class="price">Free</span>
+                </div>
+                <p class="desc">Etiam ac convallis enim, eget euismod dolor.</p>
+                <ul class="lists">
+                    <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Aenean quis</span>
+                    </li>
+                    <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Morbi semper</span>
+                    </li>
+                    <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Tristique enim nec</span>
+                    </li>
+                </ul>
+                <button type="button" class="action">Get Started</button>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <span class="title">Beginner</span>
+                    <span class="price">Premium</span>
+                </div>
+                <p class="desc">Etiam ac convallis enim, eget euismod dolor.</p>
+                <ul class="lists">
+                    <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Aenean quis</span>
+                    </li>
+                    <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Morbi semper</span>
+                    </li>
+                    <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Tristique enim nec</span>
+                    </li>
+                </ul>
+                <button type="button" class="action" :style="{ backgroundColor: '#FFC107' }">Get Started</button>
+            </div>
+        </div>
+        <br><br>
+    </div>
 </template>
 
 <script setup>
@@ -9,5 +69,111 @@
 </script>
 
 <style scoped>
+    h1{
+        display: flex;
+        justify-content: center;
+        color: #727477;
+        column-gap: 4rem;
+        row-gap: 4rem;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 2rem;
+        column-gap: 4rem;
+    }
+    .card {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin-bottom: 2rem;
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.25rem;
+        background-color: rgb(36, 37, 41);
+        padding: 1.5rem;
+    }
 
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: clamp(1rem, 1.5rem, 2rem);
+        line-height: 2rem;
+        font-weight: 700;
+        color: #fff
+    }
+
+    .price {
+        font-size: clamp(2.2rem, 2.5rem, 3.75rem);
+        line-height: 1;
+        font-weight: 700;
+        color: #fff
+    }
+
+    .desc {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.625;
+        color: rgba(156, 163, 175, 1);
+    }
+
+    .lists {
+        margin-bottom: 1.5rem;
+        flex: 1 1 0%;
+        color: rgba(156, 163, 175, 1);
+    }
+
+    .lists .list {
+        margin-bottom: 0.5rem;
+        display: flex;
+        margin-left: 0.5rem
+    }
+
+    .lists .list svg {
+        height: 1.5rem;
+        width: 1.5rem;
+        flex-shrink: 0;
+        margin-right: 0.5rem;
+        color: rgba(167, 139, 250, 1);
+    }
+
+    .action {
+        border: none;
+        outline: none;
+        display: inline-block;
+        border-radius: 0.25rem;
+        background-color: rgb(202, 195, 221);
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: rgba(17, 24, 39, 1);
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        .card {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin-bottom: 2rem;
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.25rem;
+        background-color: rgba(17, 24, 39, 1);
+        padding: 1.5rem;
+    }
+    }
 </style>
