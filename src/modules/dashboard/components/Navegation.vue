@@ -10,10 +10,6 @@
         <el-icon><icon-menu  /></el-icon>
         <template #title>Panel</template>
       </el-menu-item>
-      <el-menu-item class="icon" index="3" @click="() => emit('section','perfil')">
-        <el-icon><icon-User /></el-icon>
-        <template #title>Perfil</template>
-      </el-menu-item>
       <el-menu-item class="icon" index="4" @click="() => emit('section','Tablas')">
         <el-icon><document /></el-icon>
         <template #title>Tablas</template>
@@ -34,8 +30,8 @@
           <span>Administración</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="1-1">Pedidos</el-menu-item>
-          <el-menu-item index="1-2">Control</el-menu-item>
+          <el-menu-item index="1-1" @click="() => emit('section','pedidos')" >Pedidos</el-menu-item>
+          <el-menu-item index="1-2" @click="() => emit('section','control')">Control</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
       <el-menu-item class="icon" index="7">

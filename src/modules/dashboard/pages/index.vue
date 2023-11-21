@@ -9,10 +9,10 @@
     <el-backtop :right="20" :bottom="10" class="subir"/>
     <div class="panel">
         <Panel v-if="currentSection == 'panel'" />
-        <Perfil v-if="currentSection == 'perfil'" />
         <Suscripcion v-if="currentSection == 'Suscripcion'" />
         <Comida v-if="currentSection == 'Comida'" />
         <Tablas v-if="currentSection == 'Tablas'" />
+        <Pedidos v-if="currentSection == 'pedidos'" />
     </div>
 </div>
 </template>
@@ -21,11 +21,11 @@
 import Navegation from  '../components/Navegation.vue'
 import NavBar from  '../components/NavBar.vue'
 import Panel from '../components/Panel.vue'
-import Perfil from '../components/Perfil.vue'
 import Suscripcion from '../components/Suscripcion.vue'
 import Comida from '../components/Comida.vue'
 import Tablas from '../components/Tablas.vue'
 import { ref } from 'vue'
+import Pedidos from '../components/Pedidos.vue'
 const currentSection = ref("panel")
 
 function changeSection(section){
