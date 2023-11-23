@@ -31,7 +31,6 @@
     justify-content: center;
     padding: 25px 25px;
     gap: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
     }
 
     /* for all social containers*/
@@ -39,7 +38,7 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background-color: rgb(44, 44, 44);
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;

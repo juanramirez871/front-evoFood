@@ -1,10 +1,15 @@
 <template>
   <footer>
     <h4>EvooFood</h4>
+    <br>
+    <div class="iconos">
+        <Iconos/>
+    </div>
   </footer>
 </template>
 
 <script setup>
+import Iconos from '../../modules/plantilla/components/Iconos.vue';
 </script>
 
 <style scoped>
@@ -20,4 +25,8 @@ footer{
 *{
   margin: 0;
 }
+.iconos{
+        display: flex;
+        justify-content: center;
+    }
 </style>

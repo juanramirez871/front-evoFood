@@ -56,12 +56,12 @@
     </div>
 </div>
 </template>
-    <script  setup>
-            import { ref } from 'vue'
+<script  setup>
+    import { ref } from 'vue'
 
-            const show = ref(true)
-            
-    </script>
+    const show = ref(true)
+    
+</script>
     <style scoped>
     h4 {
         color: #000000;

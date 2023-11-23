@@ -15,11 +15,12 @@
                 <div style="padding: 14px">
                 <span class="titulo">{{ item.titulo }}</span>
                 <div class="bottom">
-                    <time class="time">{{ currentDate }}</time>
-                    <el-button class="button" text @click="openDialog(index)">
-                        OPERACIONES
-                    </el-button>
+                    <time class="time">{{ currentTime }}</time>
                 </div>
+                <br>
+                <el-button class="button" text @click="openDialog(index)">
+                    OPERACIONES
+                </el-button>
                 </div>
             </el-card>
 
@@ -43,6 +44,34 @@
                 <span>
                     Ingredientes:  {{ selectedIngrediente }}
                 </span>
+                <br>
+                <span>
+                    Adicionales:  {{ selecteAdicionales }}
+                </span>
+                <br>
+                <span>
+                    Cantidad:  {{ selectedCantidades }}
+                </span>
+                <br>
+                <span>
+                    Mesa:  {{ selectedMesa }}
+                </span>
+                <br>
+                <span>
+                    Precio Total:  {{ selectedPrecios }}
+                </span>
+                <br>
+                <span>
+                    Medio de Pago:  {{ selectedPago }}
+                </span>
+                <br>
+                <span>
+                    Dirección:  {{ selecteDireccion }}
+                </span>
+                <br>
+                <span>
+                    Telefono:  {{ selectedTelefono }}
+                </span>
                 <template #footer>
                 <span class="dialog-footer">
                     <el-button @click="centerDialogVisible = false">Cancel</el-button>
@@ -61,29 +90,57 @@
 import { ref } from 'vue'
 const selectedCliente = ref(null);
 const selectedIngrediente = ref(null);
-
-const currentDate = ref(new Date())
+const selectedPrecios = ref(null);
+const selecteAdicionales = ref(null);
+const selectedCantidades = ref(null);
+const selectedMesa = ref(null);
+const selectedPago = ref(null);
+const selecteDireccion = ref(null);
+const selectedTelefono = ref(null);
 const centerDialogVisible = ref(false)
+
+let currentDateAndTime = new Date();
+
+let currentTime = currentDateAndTime.toLocaleString('en-US', {
+    hour12: true,
+});
 
 const data = [
     {
         titulo : "hamgurguesa de la calle",
         imageUrl :"https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
         cliente : "jose david",
-        ingredientes : "pan, carne"
+        ingredientes : "pan, carne",
+        adicionales : "cocacola pequeña",
+        totalPrecio : 20.000,
+        cantidad: 1,
+        medioPago : "efectivo",
+        mesa : 2
     },
     {
         titulo : "pizza de carnes",
         imageUrl :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDvr9uTUCMEU4v9wHfFV9rPJ81dnaZRjWcGg&usqp=CAU",
         cliente : "olga lucia",
-        ingredientes : "salchicha, carne"
-
+        ingredientes : "salchicha, carne",
+        adicionales : "papas fritas",
+        totalPrecio : 10.000,
+        cantidad: 2,
+        medioPago : "nequi",
+        direccion : "calle 1A San Carlos",
+        telefono : "3177289785"
     }
 ]
 const openDialog = (index) => {
     centerDialogVisible.value = true;
     selectedCliente.value = data[index].cliente;
     selectedIngrediente.value = data[index].ingredientes;
+    selectedPrecios.value = data[index].totalPrecio;
+    selecteAdicionales.value = data[index].adicionales;
+    selectedCantidades.value = data[index].cantidad;
+    selectedMesa.value = data[index].mesa;
+    selectedPago.value = data[index].medioPago;
+    selecteDireccion.value = data[index].direccion;
+    selectedTelefono.value = data[index].telefono;
 };
 
 const active = ref(0)

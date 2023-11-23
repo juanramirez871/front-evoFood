@@ -35,6 +35,7 @@ function changeSection(section){
 </script>
 
 <style scoped>
+
 .container{
     width: 100%;
     display: flex;
@@ -49,6 +50,7 @@ function changeSection(section){
 }
 .panel{
     width: 100%;
+    height: 10vh;
     margin-top: 2rem;
     margin-right: 1rem;
 }

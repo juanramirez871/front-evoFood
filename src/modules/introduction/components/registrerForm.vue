@@ -1,70 +1,46 @@
 <template>
     <div class="form-container">
+      <div class="btn" style="justify-content: center;">
+            <myButton initial-text="INICIA SESIÓN" @click="redirectToLogin" />
+      </div>
+      <br>
       <div class="titulo">
         <h1>REGISTRA TU RESTAURANTE</h1>
       </div>
-      <el-form :model="form" class="demo-form-inline">
-        <el-row :gutter="20">
-          <el-col :span="24" :md="12">
-            <el-form-item label="TU NOMBRE">
-              <el-input v-model="form.name" placeholder="TU NOMBRE" clearable />
-            </el-form-item>
-          </el-col>
-          <el-col :span="24" :md="12">
-            <el-form-item label="TUS APELLIDOS">
-              <el-input v-model="form.surname" placeholder="TUS APELLIDOS" clearable />
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="20">
-          <el-col :span="24" :md="12">
-            <el-form-item label="PAIS">
-              <el-select v-model="form.region" placeholder="COLOMBIA +57">
-                <el-option label="Zone one" value="shanghai" />
-                <el-option label="Zone two" value="beijing" />
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="24" :md="12">
-            <el-form-item label="TELEFONO">
-              <el-input v-model="form.surname" placeholder="TELEFONO" clearable />
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="20">
-          <el-col :span="24" :md="12">
-            <el-form-item label="E-MAIL">
-              <el-input v-model="form.phone" placeholder="example@gmail.com" clearable />
-            </el-form-item>
-          </el-col>
-          <el-col :span="24" :md="12">
-            <el-form-item label="CONFIRMAR">
-              <el-input v-model="form.surname" placeholder="example@gmail.com" clearable />
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="20">
-          <el-col :span="24" :md="12">
-            <el-form-item label="CONTRASEÑA">
-              <el-input v-model="form.phone" placeholder="CREAR CONTRASEÑA" clearable />
-            </el-form-item>
-          </el-col>
-          <el-col :span="24" :md="12">
-            <el-form-item label="CONFIRMAR">
-              <el-input v-model="form.surname" placeholder="CONFIRMAR CONTRASEÑA" clearable />
-            </el-form-item>
-          </el-col>
-        </el-row>
-      </el-form>
-        <div class="btns">
+      <el-form :model="form" :label-width="labelWidth" class="responsive-form">
+    <el-form-item label="TU NOMBRE">
+        <el-input v-model="form.name" />
+    </el-form-item>
+      <el-form-item label="TUS APELLIDOS">
+          <el-input v-model="form.name" />
+      </el-form-item>
+    <el-form-item label="PAIS">
+        <el-select v-model="form.region" placeholder="seleccione país">
+        <el-option label="Zone one" value="shanghai" />
+        <el-option label="Zone two" value="beijing" />
+        </el-select>
+    </el-form-item>
+    <el-form-item label="TELEFONO">
+        <el-input v-model="form.name" />
+    </el-form-item>
+    <el-form-item label="E-MAIL">
+        <el-input v-model="form.name" />
+    </el-form-item>
+    <el-form-item >
+        <el-input v-model="form.name"  placeholder="CONFIRMAR E-MAIL"/>
+    </el-form-item>
+    <el-form-item label="CONTRASEÑA">
+        <el-input v-model="form.name" />
+    </el-form-item>
+    <el-form-item>
+        <el-input v-model="form.name" placeholder="CONFIRMAR CONTRASEÑA" />
+    </el-form-item>
+      <div class="btns">
           <div class="btn">
             <myButton initial-text="REGISTRO"  />
           </div>
-          <div class="btn">
-            <myButton initial-text="INICIA SESIÓN" @click="() => router.push({ name: 'iniciar.sesion' })" />
-          </div>
-        </div>
-      
+      </div>
+    </el-form>
     </div>
   </template>
   
@@ -73,10 +49,20 @@
   import myButton from './myButton.vue'
   import { useRouter } from 'vue-router';
 
+  const labelWidth = ref('120px');
+  const isMobile = () => {
+  const userAgent = navigator.userAgent;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+};
 
+if (isMobile()) {
+  labelWidth.value = null;
+}
+  
   const router = useRouter()
-  console.log(router)
-
+  const redirectToLogin = () => {
+  router.push({ name: 'iniciar.sesion' });
+};
   const form = reactive({
     name: '',
 
@@ -85,7 +71,6 @@
   const onSubmit = () => {
     console.log('submit!')
   }
-
 
 </script>
   
@@ -109,12 +94,12 @@
   }
   .btns{
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .btn{
     display: flex;
-    margin: 3%;
+    margin: 1.6%;
   }
   .modal {
     position: fixed;
@@ -164,5 +149,10 @@
       max-width: 50%;
     }
   }
+  @media (max-width: 767px) {
+    .el-form-item{
+        display: flow;
+    }
+}
 </style>
   

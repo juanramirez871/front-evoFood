@@ -62,7 +62,7 @@
 }
 .stat-title {
     grid-column-start: 1;
-    color: rgb(197, 194, 194);
+    color: rgb(252, 225, 225);
     font-size: clamp(1rem, 1.5vw, 2rem);
 }
 .stat-value {

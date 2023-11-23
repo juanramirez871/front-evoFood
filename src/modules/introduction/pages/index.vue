@@ -3,7 +3,7 @@
     <div class="nav">
         <!-- <Header /> -->
     </div>
-    <el-backtop :right="20" :bottom="100" />
+    <el-backtop :right="20" :bottom="40" />
     <div class="imagen">
         <img src="../assets/rating.png" alt="">
     </div>
@@ -53,7 +53,7 @@
         />
     </div>
     <div class="titulo">
-        Preguntas Frecuentes
+        PQR
     </div>
     <div>
         <PQR/>
@@ -202,7 +202,7 @@ const cartas = ref([
     background-color:#95B3FF;
     height:auto;
     padding : 5rem;
-
+    box-shadow: 0px 5px 20px 19px #95B3FF;
 }
 @media (max-width: 767px) {
     .imagen{

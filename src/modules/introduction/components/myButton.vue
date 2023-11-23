@@ -100,11 +100,7 @@
   </script>
   
 <style scoped>
-  .main {
-    align-items: center;
-    justify-content: center;
-    transform: translate(0%,25%);
-}
+
 
 button {
   width: 13em;
@@ -119,7 +115,6 @@ button {
   transition: 0.4s ease-in-out;
   cursor: pointer;
   text-align: center;
-  justify-content: center;
 }
 
 .text {

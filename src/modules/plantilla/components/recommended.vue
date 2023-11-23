@@ -37,8 +37,8 @@
         <img :src="image" alt="comida" style="border-radius: 5px;">
         <div style="position: absolute; right: 50px; bottom: 0;">
             <EditImage
-              @uploadImage="uploadImage"
-              :aspectRatio="[16, 9]"
+                @uploadImage="uploadImage"
+                :aspectRatio="[16, 9]"
             />
         </div>
     </div>
