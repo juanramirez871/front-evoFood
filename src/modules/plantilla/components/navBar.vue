@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header" :style="{background: valueColor}">
     <div class="header-container">
     <a class="logo">
         <img v-if="!imgLogo" src="../../introduction/assets/logoevofood.png" alt="Logo">
@@ -16,7 +16,7 @@
             <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
             <a :class="{ 'active-link': activeLink === 'Menus' }" href="#" @click="setActiveLink('Menus')">Menús</a>
             <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
-            <buttonSearch />
+            <buttonSearch  :colorInput="inputColor" />
         </div>
         <div class="menu-toggle">
             <hamburguerButton @click="toggleMenu" />
@@ -32,6 +32,15 @@
             <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
         </div>
     </div>
+
+    <div class="contentColor">
+        <div class="colorBackground">
+            <p>Color Fondo</p><input type="color" :value="valueColorBack" @change="(e) => body.style.backgroundColor = e.target.value">
+        </div>
+        <div class="colorBackground">
+            <p>Color barra navegadora</p><input type="color" :value="valueColor" @change="changeBarInput">
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -43,6 +52,10 @@ import EditImage from "../../../shared/components/EditImage.vue";
 const menuOpen = ref(false);
 const activeLink = ref(null);
 const imgLogo = ref()
+const body = document.body
+const valueColor = ref('#1f1f20')
+const inputColor = ref('#1f1f30');
+const valueColorBack = ref('#000000')
 const toggleMenu = () => {
     menuOpen.value = !menuOpen.value;
 };
@@ -52,6 +65,26 @@ const setActiveLink = (link) => {
 
 const uploadImageLogo = ({ base64 }) => {
     imgLogo.value = base64;
+}
+
+const colorLigth = (color, factor) =>  {
+  const r = parseInt(color.substring(1, 3), 16);
+  const g = parseInt(color.substring(3, 5), 16);
+  const b = parseInt(color.substring(5, 7), 16);
+  const nuevoR = Math.min(r + factor, 255);
+  const nuevoG = Math.min(g + factor, 255);
+  const nuevoB = Math.min(b + factor, 255);
+  const nuevoColor =
+    "#" +
+    Math.round(nuevoR).toString(16).padStart(2, "0") +
+    Math.round(nuevoG).toString(16).padStart(2, "0") +
+    Math.round(nuevoB).toString(16).padStart(2, "0");
+  inputColor.value = nuevoColor;
+}
+
+const changeBarInput = (e) => {
+    valueColor.value = e.target.value;
+    colorLigth(e.target.value, 20)
 }
 
 onMounted(() => {
@@ -78,6 +111,24 @@ box-sizing: inherit;
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
+}
+.contentColor{
+    position: absolute;
+    top: 80px;
+    z-index: 1;
+}
+.colorBackground{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.862);
+    border-radius: 3px;
+    margin-bottom: 5px;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: whitesmoke;
+}
+.colorBackground p{
+    margin-right: 10px;
 }
 .bg-div.active {
     opacity: 1;
@@ -204,5 +255,10 @@ transform: translateY(0);
     display: flex;
     max-width: 100%;
 }
+}
+@media (max-width: 600px) {
+    .colorBackground p{
+        font-size: 10px;
+    }
 }
 </style>

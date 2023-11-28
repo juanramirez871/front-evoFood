@@ -35,7 +35,7 @@ const props = defineProps({
 	}
 })
 
-const editing = ref(false);
+const editing = ref(true); // false
 const input = ref();
 const emit = defineEmits(['update:modelValue', 'change']);
 
@@ -46,7 +46,7 @@ const model = computed({
 
 function change() {
 	if(model.value == "") return
-	editing.value = false;
+	editing.value = true; // false
 	model.value = model.value.trim();
 	emit('change', model.value.trim());
 };
