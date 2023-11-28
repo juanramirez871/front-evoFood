@@ -3,30 +3,35 @@
         <h1>Agregar</h1>
     </div>
     <div class="container">
-    <el-form :model="form" label-width="120px">
-    <el-form-item label="Titulo Producto">
+    <el-form :model="form" >
+    <el-form-item label="Titulo Producto" class="flow">
         <el-input v-model="form.name" />
     </el-form-item>
-    <el-form-item label="Categoría">
+    <el-form-item label="Categoría" class="flow">
         <el-select v-model="form.region" placeholder="seleccione categoría">
         <el-option label="Zone one" value="shanghai" />
         <el-option label="Zone two" value="beijing" />
         </el-select>
     </el-form-item>
-    <el-form-item label="Descripción">
+    <el-form-item label="Descripción" class="flow">
         <el-input v-model="form.desc" type="textarea" />
     </el-form-item>
-    <el-form-item  label="Precio">
-        <el-input
-            v-model="form.input"
-            :formatter="(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
-            :parser="(value) => value.replace(/\$\s?|(,*)/g, '')"
-        />
+            <el-form-item  label="Precio" class="flow">
+                <el-input v-model="input" placeholder="Precio" clearable />
+            </el-form-item>
+    <el-form-item  label="Comparación" class="flow">
+        <el-input v-model="input" placeholder="Precio de comparación" clearable />
     </el-form-item>
-    <el-form-item label="Imágenes"  v-model="form.images">
+    <el-form-item  label="costo" class="flow">
+        <el-input v-model="input" placeholder="Precio unitario" clearable />
+    </el-form-item>
+    <el-form-item label="Ganancia" class="flow">
+        <el-input v-model="input"  clearable disabled />
+    </el-form-item>
+    <el-form-item label="Imágen"  v-model="form.images">
         <Upload />
     </el-form-item>
-    <el-form-item label="Ingredientes">
+    <el-form-item label="Ingredientes" class="flow">
         <div v-for="(ingrediente, i) in ingredientes" :key="i" style="width: min-content">
             <div style="width: max-content;display: flex;">
                 <input type="checkbox" :id="ingrediente?.label" :value="ingrediente?.label" :checked="ingrediente?.checkBox" />
@@ -40,7 +45,7 @@
     <el-form-item label="Destacar">
         <el-switch v-model="form.delivery" />
     </el-form-item>
-    <el-form-item>
+    <el-form-item >
         <el-button type="primary" @click="onSubmit">Crear</el-button>
         <el-button type="danger" @click="resetForm">Cancelar</el-button>
     </el-form-item>
@@ -109,7 +114,7 @@ h1{
         margin: 0.5%;
         background-color: transparent;
     }
-    .el-form-item{
+    .flow{
         display: flow;
     }
 }

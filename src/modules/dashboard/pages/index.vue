@@ -13,6 +13,7 @@
         <Comida v-if="currentSection == 'Comida'" />
         <Tablas v-if="currentSection == 'Tablas'" />
         <Pedidos v-if="currentSection == 'pedidos'" />
+        <Configuracion v-if="currentSection == 'Configuracion'" />
     </div>
 </div>
 </template>
@@ -26,6 +27,7 @@ import Comida from '../components/Comida.vue'
 import Tablas from '../components/Tablas.vue'
 import { ref } from 'vue'
 import Pedidos from '../components/Pedidos.vue'
+import Configuracion from '../components/Configuracion.vue'
 const currentSection = ref("panel")
 
 function changeSection(section){
@@ -41,18 +43,21 @@ function changeSection(section){
     display: flex;
     flex-direction: row;
     background-color: #f0f0f0;
+
 }
 .navegation{
     display: flex;
     margin-right: 0.5rem;
     height: 100vh;
-
+    position: fixed;
+    z-index: 3;
 }
 .panel{
     width: 100%;
     height: 10vh;
     margin-top: 2rem;
-    margin-right: 1rem;
+    margin-left: 4.5rem;
+    margin-right: 0.6rem;
 }
 .subir{
     background-color: #727477;

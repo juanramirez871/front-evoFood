@@ -152,10 +152,10 @@
             <el-col :span="12"><div />
                 <div>
                     <h3>
-                        Mesa
+                        Orden
                     </h3>
                     <div class="titulo">
-                        <el-select v-model="value" filterable placeholder="Select">
+                        <el-select v-model="value" filterable placeholder="Seleccione medio de orden">
                             <el-option
                             v-for="item in options"
                             :key="item.value"
@@ -163,6 +163,26 @@
                             :value="item.value"
                             />
                         </el-select>
+                    </div>
+                    <br>
+                    <div  v-if="value === 'Mesa'" class="titulo" id="local">
+                        <el-select v-model="mesa" filterable placeholder="Seleccione la mesa">
+                            <el-option
+                            v-for="item in mesaOptions"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value"
+                            />
+                        </el-select>
+                    </div>
+                    <div v-if="value === 'Domicilio'" class="a" id="domicilio">
+                        <div>
+                            <el-input v-model="input" placeholder="Direccion" />
+                        </div>
+                        <br>
+                        <div>
+                            <el-input v-model="input" placeholder="Telefono" />
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -238,25 +258,28 @@ const uploadImage = ({ base64 }) => {
 const value = ref('')
     const options = [
     {
-        value: 'Option1',
-        label: 'Option1',
+        value: 'Mesa',
+        label: 'Mesa',
     },
     {
-        value: 'Option2',
-        label: 'Option2',
+        value: 'Domicilio',
+        label: 'Domicilio',
+    }
+]
+const mesa = ref('')
+    const mesaOptions = [
+    {
+        value: '1',
+        label: '1',
     },
     {
-        value: 'Option3',
-        label: 'Option3',
+        value: '2',
+        label: '2',
     },
     {
-        value: 'Option4',
-        label: 'Option4',
-    },
-    {
-        value: 'Option5',
-        label: 'Option5',
-    },
+        value: '3',
+        label: '3',
+    }
 ]
 
 const newIngrediente = () => {

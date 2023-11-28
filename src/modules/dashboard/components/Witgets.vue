@@ -15,7 +15,14 @@
     </div>
     <div class="stats shadow">
         <div class="stat">
-            <div class="stat-title">PAGINA VISITADA</div>
+            <div class="stat-title">PAGINAS VISITADA</div>
+            <div class="stat-value">89,400</div>
+            <div class="stat-desc">21% more than last month</div>
+        </div>
+    </div>
+    <div class="stats shadow">
+        <div class="stat">
+            <div class="stat-title">SESIONES</div>
             <div class="stat-value">89,400</div>
             <div class="stat-desc">21% more than last month</div>
         </div>

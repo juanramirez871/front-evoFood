@@ -2,6 +2,11 @@
     <div>
         <h1>Empleados</h1>
     </div>
+    <div class="agregar">
+        <el-affix :offset="900">
+            <el-button type="primary">+</el-button>
+        </el-affix>
+    </div>
     <el-table :data="filterTableData" style="width: 100%">
     <el-table-column label="Name" prop="name" />
     <el-table-column label="Email" prop="email" />

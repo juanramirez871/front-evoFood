@@ -1,24 +1,22 @@
 <template>
     <el-menu
-    :default-active="activeIndex"
     class="el-menu-demo"
     mode="horizontal"
     :ellipsis="false"
-    @select="handleSelect"
+    @select="handleSelect" 
     >
-    <el-menu-item index="0">
+    <div index="0" class="logo">
         <img
-        style="width: 10rem"
+        style="width: 9rem"
         src="../../introduction/assets/logoevofood.png"
         alt="Element logo"
         />
-    </el-menu-item>
+    </div>
     <div class="flex-grow" />
     <el-sub-menu index="1" class="subMenu">
         <template #title><span class="item">Páginas</span></template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
+        <el-menu-item index="2-1">Inicio</el-menu-item>
+        <el-menu-item index="2-2">Plantilla</el-menu-item>
     </el-sub-menu>
     </el-menu>
 </template>
@@ -26,10 +24,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const activeIndex = ref('1')
-const handleSelect = () => {
-    console.log(".")
-}
+
 </script>
 
 <style scoped>
@@ -53,7 +48,12 @@ const handleSelect = () => {
     font-weight: 600;
     color: aliceblue;
 }
-
+.logo{
+    display: flex;
+    margin-left: 5%;
+    justify-content: center;
+    align-content: center;
+}
 @media (max-width: 767px) {
     .el-menu-item img{
         width: 2rem;

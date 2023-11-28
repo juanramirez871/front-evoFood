@@ -6,8 +6,8 @@
         <img v-else :src="imgLogo" alt="Logo">
         <div style="position: absolute; right: 15px; bottom: 0;">
             <EditImage
-              @uploadImage="uploadImageLogo"
-              :aspectRatio="[9, 3]"
+                @uploadImage="uploadImageLogo"
+                :aspectRatio="[9, 3]"
             />
         </div>
     </a>
@@ -16,6 +16,7 @@
             <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
             <a :class="{ 'active-link': activeLink === 'Menus' }" href="#" @click="setActiveLink('Menus')">Menús</a>
             <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
+            <a :class="{ 'active-link': activeLink === 'Panel' }" href="#" @click="setActiveLink('Panel')">Panel</a>
             <buttonSearch  :colorInput="inputColor" />
         </div>
         <div class="menu-toggle">

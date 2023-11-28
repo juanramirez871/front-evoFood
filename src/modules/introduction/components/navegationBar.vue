@@ -1,17 +1,25 @@
 <template>
-    <header class="header">
+    <header class="header" :style="{background: valueColor}">
     <div class="header-container">
-    <a class="logo" href="./">
-        <img src="../assets/logoevofood.png" alt="EvoFood">
+    <a class="logo">
+        <img v-if="!imgLogo" src="../../introduction/assets/logoevofood.png" alt="Logo">
+        <img v-else :src="imgLogo" alt="Logo">
+        <div style="position: absolute; right: 15px; bottom: 0;">
+            <EditImage
+                @uploadImage="uploadImageLogo"
+                :aspectRatio="[9, 3]"
+            />
+        </div>
     </a>
     <nav>
         <div class="menu-links">
             <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
-            <a :class="{ 'active-link': activeLink === 'Guia-Res' }" href="#" @click="setActiveLink('Guia-Res')">Guia</a>
             <a :class="{ 'active-link': activeLink === 'Ingresar' }" href="#" @click="setActiveLink('Ingresar')">Ingresar</a>
+            <a :class="{ 'active-link': activeLink === 'PQR' }" href="#" @click="setActiveLink('PQR')">PQR</a>
+            <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
         </div>
         <div class="menu-toggle">
-            <buttonHamgurguer @click="toggleMenu" />
+            <hamburguerButton @click="toggleMenu" />
         </div>
     </nav>
     </div>
@@ -19,25 +27,34 @@
     <div class="bg-div" :class="{ 'active': menuOpen }">
         <div>
             <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
-            <a :class="{ 'active-link': activeLink === 'Guia-Res' }" href="#" @click="setActiveLink('Guia-Res')">Guia</a>
             <a :class="{ 'active-link': activeLink === 'Ingresar' }" href="#" @click="setActiveLink('Ingresar')">Ingresar</a>
+            <a :class="{ 'active-link': activeLink === 'PQR' }" href="#" @click="setActiveLink('PQR')">PQR</a>
+            <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted} from 'vue';
-import buttonHamgurguer from '../../../shared/components/buttonHamgurguer.vue';
+import hamburguerButton from '../../plantilla/components/hamburguerButton.vue'
+import EditImage from "../../../shared/components/EditImage.vue";
 
 const menuOpen = ref(false);
 const activeLink = ref(null);
-
+const imgLogo = ref()
+const valueColor = ref('#1f1f20')
+const inputColor = ref('#1f1f30');
 const toggleMenu = () => {
     menuOpen.value = !menuOpen.value;
 };
 const setActiveLink = (link) => {
     activeLink.value = link;
 };
+
+const uploadImageLogo = ({ base64 }) => {
+    imgLogo.value = base64;
+}
+
 onMounted(() => {
     setTimeout(() => {
         const header = document.querySelector('.header');
@@ -52,94 +69,111 @@ onMounted(() => {
 box-sizing: inherit;
 }
 .bg-div {
-    background-color: #D9D9D9;
+    background: linear-gradient(180deg, #1f1f20 0%, rgba(26, 25, 25, 0.982) 100%);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 7;
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.5s ease;
     pointer-events: none;
+}
+.contentColor{
+    position: absolute;
+    top: 80px;
+    z-index: 1;
+}
+.colorBackground{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.862);
+    border-radius: 3px;
+    margin-bottom: 5px;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: whitesmoke;
+}
+.colorBackground p{
+    margin-right: 10px;
 }
 .bg-div.active {
     opacity: 1;
-    border-radius: 0 0 80% 0;
     pointer-events: auto;
 }
 .bg-div a {
-    color: #040233;
+    color: #ffffff;
     font-size: 1.7rem;
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 7rem;
+    text-decoration: unset;
 }
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 100 !important;
     width: 100%;
-    opacity: 0;
     transition: opacity 1s ease-in-out;
-    background: linear-gradient(180deg, #D7D6E9 0%, rgba(227, 226, 241, 0.982) 100%);
-    color: rgb(0, 0, 0);
-    opacity: 0;
+    background: linear-gradient(180deg, #1f1f20 0%, rgba(26, 25, 25, 0.982) 100%);
+    color: rgb(245, 236, 236);
     transform: translateY(-20px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
+    border-bottom-right-radius: 219px;
+    border-bottom-left-radius: 219px;
 }
 .header-container {
-margin-right: auto;
-margin-left: auto;
-max-width: 80%;
-height: 4rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
-
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .logo {
-display: flex;
-align-items: center;
-text-decoration: none;
-padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    padding-left: 1rem;
 }
 .logo img {
-width: 10rem;
-height: auto;
-margin-right: 0.4rem;
+    width: 10rem;
+    height: auto;
+    margin-right: 0.4rem;
 }
 .menu {
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 }
 .menu-toggle {
-background: none;
-border: none;
-cursor: pointer;
-padding: 0;
-display: flex;
-align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
 .menu-icon {
-width: 20px;
-height: 20px;
-border: 2px solid rgb(0, 0, 0);
-border-radius: 3px;
-position: relative;
-transition: transform 0.3s ease-in-out;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 .menu-open .menu-icon {
-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 .menu-links {
     display: flex;
     flex-direction: row;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     position: absolute;
     top: 84%;
     right: 0;
@@ -158,21 +192,20 @@ transform: translateY(0);
     display: flex;
     padding: 0.5rem;
     align-self: center;
-    font-family: 'dosis';
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: bolder;
-    color: #070530;
+    color: #ffffff;
     transition: transform 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
     border-bottom: 2px solid transparent;
 }
 .menu-links a:hover {
-    border-bottom-color: #05006b;
+    border-bottom-color: #ffffff;
     transform: translateY(-3px);
     opacity: 0.8;
 }
 .menu-links a.active-link {
-    border-bottom-color: #040233;
+    border-bottom-color: #ffffff;
     opacity: 0.8;
 }
 .menu-toggle {
@@ -180,7 +213,7 @@ transform: translateY(0);
     align-items: center;
 }
 /* Estilos responsivos */
-@media screen and (max-width: 946px) {
+@media screen and (max-width: 1200px) {
 .menu-links {
     display: none;
 }
@@ -188,6 +221,12 @@ transform: translateY(0);
     display: flex;
     align-items: center;
     display: flex;
+    max-width: 100%;
 }
+}
+@media (max-width: 600px) {
+    .colorBackground p{
+        font-size: 10px;
+    }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="nav">
-        <!-- <Header /> -->
+        <Header />
     </div>
     <el-backtop :right="20" :bottom="40" />
     <div class="imagen">
@@ -67,7 +67,7 @@
 import { ref } from 'vue';
 
 import Footer from '../../../shared/components/footer.vue';
-import Header from "../../plantilla/components/navBar.vue"
+import Header from "../components/navegationBar.vue"
 import botonRegistrarse from '../components/botonRegistrarse.vue';
 import descripcionInicioVue from '../components/descripcionInicio.vue';
 import descripcionMitad from '../components/descripcionMitad.vue';

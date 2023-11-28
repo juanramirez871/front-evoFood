@@ -37,41 +37,19 @@
                     </div>
                 </div>
                 <br>
-                <span>
-                    Cliente:  {{ selectedCliente }}
-                </span>
-                <br>
-                <span>
-                    Ingredientes:  {{ selectedIngrediente }}
-                </span>
-                <br>
-                <span>
-                    Adicionales:  {{ selecteAdicionales }}
-                </span>
-                <br>
-                <span>
-                    Cantidad:  {{ selectedCantidades }}
-                </span>
-                <br>
-                <span>
-                    Mesa:  {{ selectedMesa }}
-                </span>
-                <br>
-                <span>
-                    Precio Total:  {{ selectedPrecios }}
-                </span>
-                <br>
-                <span>
-                    Medio de Pago:  {{ selectedPago }}
-                </span>
-                <br>
-                <span>
-                    Dirección:  {{ selecteDireccion }}
-                </span>
-                <br>
-                <span>
-                    Telefono:  {{ selectedTelefono }}
-                </span>
+                <div class="order-details">
+                    <span>Cliente: {{ selectedCliente }}</span>
+                    <br>
+                    <span class="comida">comida: {{ selectedComida }}</span>
+                    <span>Ingredientes: {{ selectedIngrediente }}</span>
+                    <span>Adicionales: {{ selecteAdicionales }}</span>
+                    <span>Cantidad: {{ selectedCantidades }}</span>
+                    <span>Mesa: {{ selectedMesa }}</span>
+                    <span>Precio Total: {{ selectedPrecios }}</span>
+                    <span>Medio de Pago: {{ selectedPago }}</span>
+                    <span>Dirección: {{ selecteDireccion }}</span>
+                    <span>Telefono: {{ selectedTelefono }}</span>
+                </div>
                 <template #footer>
                 <span class="dialog-footer">
                     <el-button @click="centerDialogVisible = false">Cancel</el-button>
@@ -89,6 +67,7 @@
 <script setup>
 import { ref } from 'vue'
 const selectedCliente = ref(null);
+const selectedComida = ref(null);
 const selectedIngrediente = ref(null);
 const selectedPrecios = ref(null);
 const selecteAdicionales = ref(null);
@@ -109,6 +88,7 @@ const data = [
     {
         titulo : "hamgurguesa de la calle",
         imageUrl :"https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+        comida : "hamburguesa tradicional",
         cliente : "jose david",
         ingredientes : "pan, carne",
         adicionales : "cocacola pequeña",
@@ -121,6 +101,7 @@ const data = [
         titulo : "pizza de carnes",
         imageUrl :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDvr9uTUCMEU4v9wHfFV9rPJ81dnaZRjWcGg&usqp=CAU",
         cliente : "olga lucia",
+        comida : "pizza tradicional",
         ingredientes : "salchicha, carne",
         adicionales : "papas fritas",
         totalPrecio : 10.000,
@@ -133,6 +114,7 @@ const data = [
 const openDialog = (index) => {
     centerDialogVisible.value = true;
     selectedCliente.value = data[index].cliente;
+    selectedComida.value = data[index].comida;
     selectedIngrediente.value = data[index].ingredientes;
     selectedPrecios.value = data[index].totalPrecio;
     selecteAdicionales.value = data[index].adicionales;
@@ -206,6 +188,35 @@ h1{
     display: flex;
     justify-content: center;
 }
+.order-details {
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #fff;
+        max-width: 50%;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-details span {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    .order-details span:first-child {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #555;
+        display: flex;
+        justify-content: center;
+    }
+    .comida{
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #555;
+    }
 @media (max-width:768px) {
     .col{
         max-width: none;

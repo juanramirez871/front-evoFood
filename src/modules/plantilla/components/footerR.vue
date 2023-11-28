@@ -2,6 +2,7 @@
     <footer>
     <h4>EvoFood</h4>
     <br>
+    <h4>Redes Sociales</h4>
     <div class="iconos">
         <Iconos/>
     </div>

@@ -31,7 +31,7 @@
         </template>
         <el-menu-item-group>
           <el-menu-item index="1-1" @click="() => emit('section','pedidos')" >Pedidos</el-menu-item>
-          <el-menu-item index="1-2" @click="() => emit('section','control')">Control</el-menu-item>
+          <el-menu-item index="1-2" @click="() => emit('section','Configuracion')">Configuración</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
       <el-menu-item class="icon" index="7">
