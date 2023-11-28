@@ -193,7 +193,7 @@ h1{
         border-radius: 8px;
         padding: 15px;
         background-color: #fff;
-        max-width: 50%;
+        width: 90%;
         margin: 0 auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }

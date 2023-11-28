@@ -50,7 +50,7 @@ function changeSection(section){
     margin-right: 0.5rem;
     height: 100vh;
     position: fixed;
-    z-index: 3;
+    z-index: 2;
 }
 .panel{
     width: 100%;

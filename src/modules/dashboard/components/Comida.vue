@@ -3,7 +3,7 @@
         <h1>Agregar</h1>
     </div>
     <div class="container">
-    <el-form :model="form" >
+    <el-form :model="form" :label-width="labelWidth">
     <el-form-item label="Titulo Producto" class="flow">
         <el-input v-model="form.name" />
     </el-form-item>
@@ -92,6 +92,16 @@ const resetForm = () => {
     form.input = '';
     form.images = [];
 };
+const labelWidth = ref('120px');
+const isMobile = () => {
+    const userAgent = navigator.userAgent;
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+};
+
+if (isMobile()) {
+    labelWidth.value = null;
+}
+
 const onSubmit = () => {
     console.log('submit!')
 }
