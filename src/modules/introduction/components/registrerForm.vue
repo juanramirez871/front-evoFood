@@ -1,13 +1,9 @@
 <template>
     <div class="form-container">
-      <div class="btn" style="justify-content: center;">
-            <myButton initial-text="INICIA SESIÓN" @click="redirectToLogin" />
-      </div>
-      <br>
       <div class="titulo">
-        <h1>REGISTRA TU RESTAURANTE</h1>
+        <h1>INICIA EL REGISTRO</h1>
       </div>
-      <el-form :model="form" :label-width="labelWidth" class="responsive-form">
+      <!-- <el-form :model="form" :label-width="labelWidth" class="responsive-form">
     <el-form-item label="TU NOMBRE">
         <el-input v-model="form.name" />
     </el-form-item>
@@ -40,6 +36,25 @@
             <myButton initial-text="REGISTRO"  />
           </div>
       </div>
+    </el-form> -->
+      <el-form :model="form" :label-width="labelWidth" class="responsive-form"  @submit.prevent="handleNext">
+    <el-form-item label="E-MAIL">
+        <el-input v-model="form.email" />
+    </el-form-item>
+    <el-form-item >
+        <el-input v-model="form.emailVerify"  placeholder="CONFIRMAR E-MAIL"/>
+    </el-form-item>
+    <el-form-item label="CONTRASEÑA">
+        <el-input v-model="form.password" />
+    </el-form-item>
+    <el-form-item>
+        <el-input v-model="form.passwordVerify" placeholder="CONFIRMAR CONTRASEÑA" />
+    </el-form-item>
+      <div class="btns">
+          <div class="btn">
+            <myButton initial-text="SIGUIENTE" type="submit" />
+          </div>
+      </div>
     </el-form>
     </div>
   </template>
@@ -60,18 +75,31 @@ if (isMobile()) {
 }
   
   const router = useRouter()
-  const redirectToLogin = () => {
-  router.push({ name: 'iniciar.sesion' });
+  const redirectVerify = () => {
+  router.push({ name: 'verificar.correo' });
 };
   const form = reactive({
-    name: '',
+    email: '',
+    emailVerify: '',
+    password: '',
+    passwordVerify: '',
 
   })
   
-  const onSubmit = () => {
-    console.log('submit!')
-  }
+  const handleNext = () => {
+    if (form.email !== form.emailVerify) {
+      alert('Los campos de correo electrónico no coinciden.');
+      return;
+    }
 
+    else if (form.password !== form.passwordVerify) {
+      alert('Los campos de contraseña no coinciden.');
+      return;
+    }
+    else{
+      redirectVerify()
+    }
+  }
 </script>
   
   <style scoped>
