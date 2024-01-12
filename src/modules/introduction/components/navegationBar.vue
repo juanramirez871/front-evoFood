@@ -4,17 +4,12 @@
     <a class="logo">
         <img v-if="!imgLogo" src="../../introduction/assets/logoevofood.png" alt="Logo">
         <img v-else :src="imgLogo" alt="Logo">
-        <div style="position: absolute; right: 15px; bottom: 0;">
-            <EditImage
-                @uploadImage="uploadImageLogo"
-                :aspectRatio="[9, 3]"
-            />
-        </div>
+
     </a>
     <nav>
         <div class="menu-links">
-            <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
-            <a :class="{ 'active-link': activeLink === 'Ingresar' }" href="#" @click="setActiveLink('Ingresar')">Ingresar</a>
+            <a :class="{ 'active-link': activeLink === 'Inicio' }" @click="() => { setActiveLink('Inicio'); redirectInInicio(); }">Inicio</a>
+            <a :class="{ 'active-link': activeLink === 'Ingresar' }" @click="() => { setActiveLink('Ingresar'); redirectToLogin(); }">Ingresar</a>
             <a :class="{ 'active-link': activeLink === 'PQR' }" href="#" @click="setActiveLink('PQR')">PQR</a>
             <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
         </div>
@@ -26,8 +21,8 @@
 </header>
     <div class="bg-div" :class="{ 'active': menuOpen }">
         <div>
-            <a :class="{ 'active-link': activeLink === 'Inicio' }" href="#" @click="setActiveLink('Inicio')">Inicio</a>
-            <a :class="{ 'active-link': activeLink === 'Ingresar' }" href="#" @click="setActiveLink('Ingresar')">Ingresar</a>
+            <a :class="{ 'active-link': activeLink === 'Inicio' }" @click="() => { setActiveLink('Inicio'); redirectInInicio(); }">Inicio</a>
+            <a :class="{ 'active-link': activeLink === 'Ingresar' }" @click="() => { setActiveLink('Ingresar'); redirectToLogin(); }">Ingresar</a>
             <a :class="{ 'active-link': activeLink === 'PQR' }" href="#" @click="setActiveLink('PQR')">PQR</a>
             <a :class="{ 'active-link': activeLink === 'Contactos' }" href="#" @click="setActiveLink('Contactos')">Contactos</a>
         </div>
@@ -36,14 +31,21 @@
 
 <script setup>
 import { ref, onMounted} from 'vue';
+import { useRouter } from 'vue-router';
 import hamburguerButton from '../../plantilla/components/hamburguerButton.vue'
-import EditImage from "../../../shared/components/EditImage.vue";
+
+const router = useRouter()
+const redirectToLogin = () => {
+    router.push({ name: 'iniciar.sesion' });
+};
+const redirectInInicio = () => {
+    router.push({ name: 'introduccion' });
+};
 
 const menuOpen = ref(false);
 const activeLink = ref(null);
 const imgLogo = ref()
 const valueColor = ref('#1f1f20')
-const inputColor = ref('#1f1f30');
 const toggleMenu = () => {
     menuOpen.value = !menuOpen.value;
 };
@@ -51,9 +53,6 @@ const setActiveLink = (link) => {
     activeLink.value = link;
 };
 
-const uploadImageLogo = ({ base64 }) => {
-    imgLogo.value = base64;
-}
 
 onMounted(() => {
     setTimeout(() => {
@@ -203,6 +202,7 @@ transform: translateY(0);
     border-bottom-color: #ffffff;
     transform: translateY(-3px);
     opacity: 0.8;
+    cursor: pointer;
 }
 .menu-links a.active-link {
     border-bottom-color: #ffffff;

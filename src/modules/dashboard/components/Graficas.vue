@@ -3,15 +3,14 @@
         <el-row style="display:contents">
         <el-col :lg="9" >
             <div class="principal">
-            <el-card shadow="always">
-                TOTAL RENTABILIDAD
-            <hr />
-            <br />
-            <div>
-                <img src="https://pymstatic.com/9284/conversions/histograma-default.jpg" alt="" >
-            </div>
-            </el-card>
-
+                <el-card shadow="always">
+                    TOTAL RENTABILIDAD
+                <hr />
+                <br />
+                <div class="chart">
+                    <chart />
+                </div>
+                </el-card>
             </div>
         </el-col>
         </el-row>
@@ -53,6 +52,9 @@
     </div>
 </template>
 
+<script setup>
+    import chart from './chart.vue';
+</script>
 <style scoped>
 .el-row {
     row-gap: 2rem;
@@ -66,7 +68,11 @@
 .principal{
     display: flex;
     justify-content: center;
-
+    width: 50rem;
+}
+.chart{
+    width: 40rem;
+    height: 30vh;
 }
 .el-card {
         white-space: wrap;

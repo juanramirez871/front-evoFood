@@ -40,7 +40,7 @@
                 <div class="order-details">
                     <span>Cliente: {{ selectedCliente }}</span>
                     <br>
-                    <span class="comida">comida: {{ selectedComida }}</span>
+                    <span class="comida">Comida: {{ selectedComida }}</span>
                     <span>Ingredientes: {{ selectedIngrediente }}</span>
                     <span>Adicionales: {{ selecteAdicionales }}</span>
                     <span>Cantidad: {{ selectedCantidades }}</span>
