@@ -9,16 +9,17 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.6.5",
+    "chart.js": "^4.0.0",
     "dayjs": "^1.11.9",
     "element-plus": "^2.3.9",
     "install": "^0.13.0",
     "npm": "^10.2.3",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",
+    "vue-chartjs": "^5.0.0",
     "vue-picture-cropper": "^0.7.0",
-    "vue-router": "^4.2.4",
-    "chart.js": "^4.0.0",
-    "vue-chartjs": "^5.0.0"
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.1",
