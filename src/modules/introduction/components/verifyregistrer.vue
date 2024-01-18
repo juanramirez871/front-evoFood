@@ -1,15 +1,19 @@
 <template>
-    <!-- <form action="" class="form_main">
-        <div class="logo">
-        <img src="../../introduction/assets/logoevofood.png" alt="" width="200">
-        </div>
-    <button id="button">INGRESAR</button>
-    </form> -->
-    <form class="form"> <div class="title">OTP</div> <div class="title">Verificar codigo</div> <p class="message">codigo de verificación enviado a tu correo</p> <div class="inputs"> <input id="input1" type="text" maxlength="1"> <input id="input2" type="text" maxlength="1"> <input id="input3" type="text" maxlength="1"> <input id="input4" type="text" maxlength="1"> </div> <button class="action">VERIFICAR</button> </form>
+  <form class="form">
+    <div class="title">OTP</div>
+    <div class="title">Verificar codigo</div>
+    <p class="message">codigo de verificación enviado a tu correo</p>
+    <div class="inputs">
+      <input id="input1" type="text" maxlength="1" />
+      <input id="input2" type="text" maxlength="1" />
+      <input id="input3" type="text" maxlength="1" />
+      <input id="input4" type="text" maxlength="1" />
+      <input id="input5" type="text" maxlength="1" />
+    </div>
+    <button class="action">VERIFICAR</button>
+  </form>
 </template>
-<script setup>
-
-</script>
+<script setup></script>
 <style scoped>
 .form {
   display: flex;
@@ -25,18 +29,18 @@
 .title {
   font-size: 20px;
   font-weight: bold;
-  color: rgb(255, 246, 246)
+  color: rgb(255, 246, 246);
 }
 
 .message {
   color: #a3a3a3;
   font-size: 14px;
   margin-top: 4px;
-  text-align: center
+  text-align: center;
 }
 
 .inputs {
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 .inputs input {
