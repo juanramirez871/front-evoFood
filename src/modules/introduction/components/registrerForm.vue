@@ -20,12 +20,14 @@
       </el-form-item>
       <el-form-item>
         <el-input v-model="form.emailVerify" placeholder="CONFIRMAR E-MAIL" />
+        <p v-if="emailMismatch">El correo electronico no coincide</p>
       </el-form-item>
       <el-form-item label="CONTRASEÑA">
-        <el-input 
-        type="password"
-        placeholder="CREAR CONTRASEÑA"
-        v-model="form.password" />
+        <el-input
+          type="password"
+          placeholder="CREAR CONTRASEÑA"
+          v-model="form.password"
+        />
       </el-form-item>
       <el-form-item>
         <el-input
@@ -33,10 +35,11 @@
           v-model="form.passwordVerify"
           placeholder="CONFIRMAR CONTRASEÑA"
         />
+        <p v-if="passwordMismatch">La contraseña no coincide</p>
       </el-form-item>
       <div class="btns">
         <div class="btn">
-          <myButton initial-text="SIGUIENTE" type="submit" />
+          <myButton initial-text="SIGUIENTE" type="submit"/>
         </div>
       </div>
     </el-form>
@@ -44,9 +47,11 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, computed } from "vue";
 import myButton from "./myButton.vue";
 import { useRouter } from "vue-router";
+import { registerUser, generateCode } from "../services/http";
+import { request } from "../../../services/request"
 
 const labelWidth = ref("120px");
 const isMobile = () => {
@@ -65,45 +70,34 @@ const redirectVerify = () => {
   router.push({ name: "verificar.correo" });
 };
 const form = reactive({
-  firstName : "",
-  surname : "",
+  firstName: "",
+  surname: "",
   email: "",
   emailVerify: "",
   password: "",
   passwordVerify: "",
 });
 
-const handleNext = () => {
-  if (form.email !== form.emailVerify) {
-    alert("Los campos de correo electrónico no coinciden.");
-    return;
-  } else if (form.password !== form.passwordVerify) {
-    alert("Los campos de contraseña no coinciden.");
-    return;
-  } else if (
-    form.firstName === "" ||
-    form.surname === "" ||
-    form.email === "" ||
-    form.emailVerify === "" ||
-    form.password === "" ||
-    form.passwordVerify === ""
-  ) {
-    alert("Debe completar todos los campos.");
-    return;
+const emailMismatch = computed(() => form.email !== form.emailVerify);
+const passwordMismatch = computed(() => form.password !== form.passwordVerify);
+
+async function handleNext() {
+  const { data, error: registrationError } = await request(() => registerUser(form));
+  if (registrationError) return;
+  else{
+    console.log(data.token);
+    // createCookie('myTokenCookie', data.token, { expires: 1 });
+    redirectVerify()
   }
-   else {
-    redirectVerify();
-  }
-};
+}
+
 
 </script>
 
 <style scoped>
-.el-alert {
-  margin: 20px 0 0;
-}
-.el-alert:first-child {
-  margin: 0;
+p{
+  display: contents;
+  color: #f56c6c;
 }
 .form-container {
   width: 100%;
