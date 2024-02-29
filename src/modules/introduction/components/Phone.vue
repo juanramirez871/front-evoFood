@@ -6,9 +6,9 @@
     <div class="btn3"></div>
     <div class="btn4"></div>
     <div class="card-int">
-        <div class="hello">EVOFOOD
-            <img src="../assets/logoevogorro2.0.png" alt="" width="100">
-        <span class="hidden">Revoluciona <img src="../assets/bell.png" alt="" width="60"></span>
+        <div class="hello">DEL PAPEL A LA PANTALLA
+            <img src="../assets/3-removebg-preview.png" alt="" width="200">
+        <span class="hidden">INNOVA <img src="../assets/bell.png" alt="" width="50"></span>
             
         </div>
     </div>
@@ -38,7 +38,7 @@
     }
 
     .card-int {
-    background-image: linear-gradient(to right bottom, #b7cddf, rgb(165, 206, 213), #ade1e4, #4a8198, #1c92d7, #52aaea, rgb(70, 70, 207), #004ac2, #003d94, #002e66, #001d3a, #020812);
+    background-image: linear-gradient(to right bottom, #ffe6a0da, #ffe6a0c2, #ffe6a0d2, #ffe6a0d5, #ffe6a0c2, #ff8f33fa, #f0aa71e7, #e98635f5, #ffe6a0c2, #ffe6a0c2, #f3c035c2, #e0bd5bc2);
     background-size: 200% 200%;
     background-position: 0% 0%;
     height: 100%;
@@ -132,7 +132,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     line-height: 35px;

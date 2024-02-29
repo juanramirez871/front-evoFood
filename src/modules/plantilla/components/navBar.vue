@@ -2,7 +2,7 @@
     <header class="header" :style="{background: valueColor}">
     <div class="header-container">
     <a class="logo">
-        <img v-if="!imgLogo" src="../../introduction/assets/logoevofood.png" alt="Logo">
+        <img v-if="!imgLogo" src="../../introduction/assets/2-removebg-preview.png" alt="Logo">
         <img v-else :src="imgLogo" alt="Logo">
         <div style="position: absolute; right: 15px; bottom: 0;">
             <EditImage

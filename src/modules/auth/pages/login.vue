@@ -43,7 +43,7 @@ import modalForm from '../../introduction/components/modalForm.vue'
     max-width: 100%;
     /* background-image: url('../../introduction/assets/Frame14.png'); */
     background-size: cover;
-    background-color: #afc2f4;
+    background-color: #fa9848;
     position: relative;
     border-radius: 100% 0% 0% 0%;
 }

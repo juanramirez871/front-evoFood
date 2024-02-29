@@ -43,7 +43,7 @@ import navegationBar from "../../introduction/components/navegationBar.vue";
   height: auto;
   max-width: 100%;
   background-size: cover;
-  background-color: #afc2f4;
+  background-color: #fa9848;
   position: relative;
   border-radius: 100% 0% 0% 0%;
 }

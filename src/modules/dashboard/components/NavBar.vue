@@ -7,8 +7,8 @@
     >
     <div index="0" class="logo">
         <img
-        style="width: 9rem"
-        src="../../introduction/assets/logoevofood.png"
+        style="width: 7rem"
+        src="../../introduction/assets/2-removebg-preview.png"
         alt="Element logo"
         />
     </div>

@@ -199,10 +199,10 @@ const cartas = ref([
     justify-items: center;
     justify-content: center;
     align-items: center;
-    background-color:#95B3FF;
+    background-color:#fa9848;
     height:auto;
     padding : 5rem;
-    box-shadow: 0px 5px 20px 19px #95B3FF;
+    box-shadow: 0px 5px 20px 19px #fa9848;
 }
 @media (max-width: 767px) {
     .imagen{

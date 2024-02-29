@@ -38,6 +38,7 @@ watch(route, () => {
 body{
 	margin: 0;
 	overflow-x: hidden;
+	background-color: #f7f2e8;
 }
 </style>
 

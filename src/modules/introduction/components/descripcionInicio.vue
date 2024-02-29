@@ -53,7 +53,7 @@ import Phone from './Phone.vue';
         display: flex;
         justify-content: center;
         filter: blur(90px);
-        background-image: linear-gradient( -45deg, #adbbdf 50%, #95b3ff8d 50% );
+        background-image: linear-gradient( -45deg, #fc73037a 50%, #fc73033b 50% );
         z-index : -1;
     }
     .background2 {
@@ -64,7 +64,7 @@ import Phone from './Phone.vue';
         width: 33vw;
         height: 50vh;
         filter: blur(40px);
-        background-image: linear-gradient( -45deg, #FFEF96 50%, #FFEF96 50% );
+        background-image: linear-gradient( -45deg, #ffe6a0c2 50%,#f7e6b9 50% );
         z-index : -1;
     }
 .celular {
@@ -105,7 +105,7 @@ import Phone from './Phone.vue';
         width: 60vw;
         height: 30vh;
         filter: blur(60px);
-        background-image: linear-gradient( -45deg, #ffef96 50%, #95B3FF 50% );
+        background-image: linear-gradient( -45deg, #ffef96c0 50%, #fc730394 50% );
     }
     .background2 {
         display : none;

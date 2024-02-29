@@ -1,7 +1,7 @@
 <template>
     <form action="" class="form_main">
         <div class="logo">
-          <img src="../../introduction/assets/logoevofood.png" alt="" width="200">
+          <img src="../../introduction/assets/2-removebg-preview.png" alt="" width="200">
         </div>
         <p class="heading">LOGIN</p>
         <button class="button">

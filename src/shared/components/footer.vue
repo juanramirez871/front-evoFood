@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <h4>EvooFood</h4>
+    <h4>VibeQ</h4>
     <br>
     <h4>Redes Sociales</h4>
     <div class="iconos">

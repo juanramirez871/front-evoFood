@@ -2,7 +2,7 @@
     <header class="header" :style="{background: valueColor}">
     <div class="header-container">
     <a class="logo">
-        <img v-if="!imgLogo" src="../../introduction/assets/logoevofood.png" alt="Logo">
+        <img v-if="!imgLogo" src="../../introduction/assets/1-removebg-preview.png" alt="Logo">
         <img v-else :src="imgLogo" alt="Logo">
 
     </a>
@@ -45,7 +45,7 @@ const redirectInInicio = () => {
 const menuOpen = ref(false);
 const activeLink = ref(null);
 const imgLogo = ref()
-const valueColor = ref('#1f1f20')
+const valueColor = ref('#ffffff')
 const toggleMenu = () => {
     menuOpen.value = !menuOpen.value;
 };
@@ -68,7 +68,7 @@ onMounted(() => {
 box-sizing: inherit;
 }
 .bg-div {
-    background: linear-gradient(180deg, #1f1f20 0%, rgba(26, 25, 25, 0.982) 100%);
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
@@ -86,13 +86,13 @@ box-sizing: inherit;
 }
 .colorBackground{
     display: flex;
-    background-color: rgba(0, 0, 0, 0.862);
+    background-color: #ffffff;
     border-radius: 3px;
     margin-bottom: 5px;
     align-items: center;
     padding-right: 5px;
     padding-left: 5px;
-    color: whitesmoke;
+    color: #737373;
 }
 .colorBackground p{
     margin-right: 10px;
@@ -102,7 +102,7 @@ box-sizing: inherit;
     pointer-events: auto;
 }
 .bg-div a {
-    color: #ffffff;
+    color: #444444;
     font-size: 1.7rem;
     display: flex;
     justify-content: center;
@@ -118,8 +118,8 @@ box-sizing: inherit;
     z-index: 100 !important;
     width: 100%;
     transition: opacity 1s ease-in-out;
-    background: linear-gradient(180deg, #1f1f20 0%, rgba(26, 25, 25, 0.982) 100%);
-    color: rgb(245, 236, 236);
+    background-color: #ffffff;
+    color: #737373;
     transform: translateY(-20px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     border-bottom-right-radius: 219px;
@@ -172,7 +172,7 @@ box-sizing: inherit;
 .menu-links {
     display: flex;
     flex-direction: row;
-    color: rgb(255, 255, 255);
+    color: #737373;
     position: absolute;
     top: 84%;
     right: 0;
@@ -194,12 +194,12 @@ transform: translateY(0);
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: bolder;
-    color: #ffffff;
+    color: #737373;
     transition: transform 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
     border-bottom: 2px solid transparent;
 }
 .menu-links a:hover {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #737373;
     transform: translateY(-3px);
     opacity: 0.8;
     cursor: pointer;
