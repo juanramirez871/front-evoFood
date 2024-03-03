@@ -3,7 +3,7 @@
         <div class="background"></div>
         <div class="text">
             <h1>
-                Bienvenido/a a la revolución gastronómica.
+                Bienvenido/a a la revolución comercial.
                 Transformamos por completo la experiencia de nuestros clientes.
                 Queremos que cada visita sea única y memorable.
             </h1>
